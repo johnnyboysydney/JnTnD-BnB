@@ -66,6 +66,8 @@ Work in progress. Ran out of time to implement these, I will get back to this pr
 - [Notepad++](https://notepad-plus-plus.org/) - My second editor
 - [Gitbash](https://gitforwindows.org/) - What would we do without our bash?
 
+### Questions
+
 1. How can I run the application?  
 You just need to follow the instructions on the [installation](#installation) section, where it is explained
 
