@@ -22,7 +22,7 @@ This is a full stack web app. From HTL, CSS, Jquery to Node.js, Express, JAWSDB 
 
 ## Development
 
-Created the MVC structure first and worked upon eat element required, starting from the node.js, using terminal and running ``npm i``, installing all the required dependencies, and started by creating the schema.sql and seeds.sql, preparing the database, credentials and being able to connect to it
+Created the MVC structure first and worked upon each element required, starting from the node.js, using terminal and running ``npm i``, installing all the required dependencies, and started by creating the schema.sql and seeds.sql, preparing the database, credentials and being able to connect to it
 Below some links of interest:
 
 - node.js - https://nodejs.org/en/
