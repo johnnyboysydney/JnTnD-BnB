@@ -1,4 +1,4 @@
-# Project-2
+# JnT-BnB [![Build Status](https://travis-ci.com/johnnyboysydney/Project-2.svg?token=h3vXPXspd1GX9AoW4AXc&branch=master)](https://travis-ci.com/johnnyboysydney/Project-2)
 
 ## Table of Content
 
