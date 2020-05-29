@@ -99,7 +99,7 @@ Yes, you can modify and refractor the code
 
 ### CopyRight
 
-Copyright 2020 &copy; John Merchan & Tushar Kolwalkar
+Copyright 2020 &copy; John Merchan, Tushar Kolwalkar & Danu Tucker-Saunders; 
 
 :australia:
 
