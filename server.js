@@ -16,30 +16,38 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 
 app.use(
-    session({
-      secret: "keyboard cat",
-      resave: true,
-      saveUninitialized: true
-    })
-  );
+  session({
+    secret: "keyboard cat",
+    resave: true,
+    saveUninitialized: true
+  })
+);
 
-  app.use(passport.initialize());
-  app.use(passport.session());  
+app.use(passport.initialize());
+app.use(passport.session());
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+// Serve files in 'public' directory
+app.use(express.static("public"));
+
+// Load routes
+app.use(require("./controllers/index_controller"));
+app.use(require("./controllers/guest_controller"));
+app.use(require("./controllers/table_controller"));
+
+require("./controllers/guest_auth_controller")(app, passport);
+require("./controllers/admin_auth_controller")(app, passport);
+require("./config/passport/passport.js")(passport);
 
 app.use("/", (req, res) => {
-    res.render("index");
-  });
-
-  app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-  app.set("view engine", "handlebars");
-  
-  // Serve files in 'public' directory
-  app.use(express.static("public"));
+  res.render("index");
+});
 
 // Sync models then start the server to begin listening
 db.sequelize.sync().then(() => {
-    app.listen(PORT, () => {
-      console.log("----------------------");
-      console.log("App listening on PORT " + PORT);
-    });
+  app.listen(PORT, () => {
+    console.log("----------------------");
+    console.log("App listening on PORT " + PORT);
   });
+});
