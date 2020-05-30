@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
-//get all the res
+//get all the reservations
 router.get("/tables", (req, res) => {
   db.Table.findAll({}).then(data => {
     const hbsObject = { tables: data };
@@ -10,7 +10,7 @@ router.get("/tables", (req, res) => {
   });
 });
 
-//adding a res to the list
+//adding a reservations to the list
 router.post("/tables", (req, res) => {
   db.Table.create({
     name: req.body.name,
@@ -29,7 +29,7 @@ router.post("/tables", (req, res) => {
           id: req.body.id
         }
       }
-    ).then(data => {
+    ).then(() => {
       res.redirect("/tables");
     });
   });

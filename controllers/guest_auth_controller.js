@@ -24,6 +24,9 @@ module.exports = function(app, passport) {
 
   app.get("/guest/logout", isLoggedIn, (req, res) => {
     req.session.destroy(err => {
+      if (err) {
+        throw err;
+      }
       res.redirect("/");
     });
   });
@@ -38,25 +41,30 @@ module.exports = function(app, passport) {
 
   app.put("/guest/checkout", isLoggedIn, (req, res) => {
     req.session.destroy(err => {
-      db.Room.update(
-        {
-          available: true,
-          checkin: false
-        },
-        {
-          where: {
-            GuestId: req.user.id
+      if (err) {
+        throw err;
+      }
+      {
+        db.Room.update(
+          {
+            available: true,
+            checkin: false
+          },
+          {
+            where: {
+              GuestId: req.user.id
+            }
           }
-        }
-      ).then(result => {
-        db.Guest.destroy({
-          where: {
-            id: req.user.id
-          }
-        }).then(result2 => {
-          res.redirect("/");
+        ).then(result => {
+          db.Guest.destroy({
+            where: {
+              id: result.user.id
+            }
+          }).then(() => {
+            res.redirect("/");
+          });
         });
-      });
+      }
     });
   });
 
