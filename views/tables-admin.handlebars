@@ -1,0 +1,21 @@
+<search>
+  <div id="search">
+    <label>
+      <span>Search For Table Reservation:</span>
+      <input type="text" name="name">
+    </label>
+    <label>
+      <input type="submit" value="Search">
+    </label>
+  </div>
+</search>
+
+<h2>All Tables</h2>
+
+{{#each tables}}
+  <a href="/admin/tables/id/{{this.id}}">
+    {{#if this.available}}
+        <div class="room-reserved">{{this.id}}</div>
+      {{/if}}
+  </a>
+{{/each}}
