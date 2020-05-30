@@ -1,42 +1,41 @@
 {
-    "name": "project-2",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-      "test": "mocha",
-      "start": "node server.js",
-      "lint": "eslint --quiet .",
-      "fix": "eslint --fix .",
-      "watch": "nodemon server.js",
-      "jest": "jest"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "bcrypt": "^4.0.1",
-      "bcryptjs": "2.4.3",
-      "connect-flash": "^0.1.1",
-      "express": "^4.17.1",
-      "express-handlebars": "^4.0.4",
-      "express-session": "^1.17.1",
-      "jest": "^26.0.1",
-      "method-override": "^3.0.0",
-      "mysql2": "^1.7.0",
-      "passport": "^0.4.1",
-      "passport-local": "^1.0.0",
-      "sequelize": "^5.21.11"
-    },
-    "devDependencies": {
-      "chai": "^4.2.0",
-      "chai-http": "^4.3.0",
-      "cross-env": "^5.2.1",
-      "eslint": "^4.19.1",
-      "eslint-config-prettier": "^2.10.0",
-      "eslint-plugin-prettier": "^2.7.0",
-      "mocha": "^5.2.0",
-      "prettier": "^1.19.1"
-    }
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js",
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix .",
+    "watch": "nodemon server.js",
+    "jest": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "bcryptjs": "2.4.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "express-session": "^1.17.1",
+    "jest": "^26.0.1",
+    "method-override": "^3.0.0",
+    "mysql2": "^1.7.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.21.11"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "cross-env": "^5.2.1",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.10.0",
+    "eslint-plugin-prettier": "^2.7.0",
+    "mocha": "^5.2.0",
+    "prettier": "^1.19.1"
   }
-  
+}
