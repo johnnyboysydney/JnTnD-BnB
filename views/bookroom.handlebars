@@ -1,4 +1,16 @@
-<form>
+<form action="/room/book" method="POST">
+  <h2>Book a Room</h2>
+  <label>
+    <span>Room Number:</span>
+    <select name="room" required>
+      <option value="" disabled selected hidden>Choose a room</option>
+      {{#each rooms}}
+        {{#if this.available}}
+          <option value="{{this.id}}">{{this.id}}</option>
+        {{/if}}
+      {{/each}}
+    </select>
+  </label>
   <label>
     <span>First Name</span>
     <input type="text" name="firstname" placeholder="First Name">
