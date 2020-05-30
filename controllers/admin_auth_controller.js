@@ -1,17 +1,14 @@
 const db = require("../models");
 
 module.exports = function(app, passport) {
+  // HOME PAGE 
 
-  // =====================================
-  // HOME PAGE (with login links) ========
-  // =====================================
   app.get('/admin', function(req, res) {
-    res.redirect('/admin/login'); // load the index file
+    res.redirect('/admin/login'); 
   });
 
-  // =====================================
-  // LOGIN ===============================
-  // =====================================
+  // LOGIN 
+
   app.get('/admin/login', function(req, res) {
     // render the page and pass in any flash data if it exists
     res.render('loginadmin'); 
@@ -20,13 +17,10 @@ module.exports = function(app, passport) {
   // process the login form
   // app.post('/login', do all our passport stuff here);
   app.post('/admin/login', passport.authenticate('admin-login', {
-    successRedirect : '/admin/menu', // redirect to the secure profile section
-    failureRedirect : '/admin/login' // redirect back to the signup page if there is an error
-  }));
+    successRedirect : '/admin/menu', 
+    failureRedirect : '/admin/login' 
 
-  // =====================================
   // SIGNUP ==============================
-  // =====================================
   app.get('/admin/signup', function(req, res) {
     res.render('adminsignup');
   });
@@ -42,9 +36,6 @@ module.exports = function(app, passport) {
     res.render('manager');
   });
 
-  // =====================================
-  // PROFILE SECTION =====================
-  // =====================================
   // we will want this protected so you have to be logged in to visit
   // we will use route middleware to verify this (the isLoggedIn function)
   app.get('/admin/rooms', isLoggedIn, function(req, res) {
@@ -179,9 +170,7 @@ module.exports = function(app, passport) {
     });
   });
 
-  // =====================================
   // LOGOUT ==============================
-  // =====================================
   app.get('/admin/logout', isLoggedIn, function(req, res) {
     req.session.destroy(function(err) {
       res.redirect('/admin');
