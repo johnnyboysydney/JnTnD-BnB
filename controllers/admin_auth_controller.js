@@ -1,9 +1,8 @@
 const db = require("../models");
 
 module.exports = function(app, passport) {
-  // HOME PAGE 
-
-  app.get('/admin', function(req, res) {
+  // HOME PAGE
+  app.get("/admin", function(req, res) {
     res.redirect('/admin/login'); 
   });
 
@@ -21,7 +20,7 @@ module.exports = function(app, passport) {
     failureRedirect : '/admin/login' 
   })
   );
-  // SIGNUP ==============================
+  // SIGNUP 
   app.get('/admin/signup', function(req, res) {
     res.render('adminsignup');
   });
