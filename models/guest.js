@@ -1,5 +1,5 @@
 module.exports = function(){
-    let Guest = sequelize.define("Guest", {
+    const Guest = sequelize.define("Guest", {
         first_name: {
             type: DataTypes.STRING,
             allowNull: false,
