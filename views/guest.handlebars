@@ -1,0 +1,26 @@
+{{#each guest}}
+<section class="guest-info">
+  <h2>Current Guest Information:</h2>
+  <h3>Room #{{this.room_number}}></h3>
+  <ul>
+    <li><strong>First Name:</strong> {{this.first_name}}</li>
+    <li><strong>Last Name:</strong> {{this.last_name}}</li>
+    <li><strong>Phone:</strong> {{this.phone}}</li>
+    <li><strong>Email:</strong> {{this.email}}</li>
+    <li><strong>Check-in:</strong> {{this.checkin}}</li>
+    <li><strong>Check-out:</strong> {{this.checkout}}</li>
+  </ul>
+  
+  <form action="/guest/checkout/?_method=PUT" method="POST">
+    <input type="submit" value="Check Out">
+  </form>
+
+  <footer>
+    <ul>
+      <li><a href="/tables">Restaurant Reservation</a></li>
+      <li><a href="/guest/logout">Sign Out</a></li>
+    </ul>
+    
+  </footer>
+</section>
+{{/each}}
