@@ -57,20 +57,18 @@ nav {
     flex-flow: column;
 }
 
-/*
+
 nav h1 {
   background: url(/assets/img/logo.png);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
-  height: 100%;
+  height: 50px;
+  margin: 0;
+  color: rgba(0,0,0,0);
+  background-position: center;
 }
-*/
 
-
-nav h1 {
-  display: none;
-}
 nav ul, nav li,
 footer ul, footer li,
 ul li {
@@ -79,12 +77,17 @@ ul li {
   margin: 0;
   padding: 0;
 }
+
+nav ul {
+  background: var(--dark);
+}
 nav ul li:first-child { 
   justify-content: left;
    flex-grow: 2;
 }
 
 nav a {
+  color: #fff;
   padding: 1em;
 }
 
@@ -113,6 +116,8 @@ form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  background: white;
+  padding: 1em;
 }
 
 .box-login {
@@ -124,14 +129,14 @@ form label {
   color: #333;
   display: block;
 }
-
+/*
 form label:first-child {
   flex-grow: 2;
   width: -webkit-fill-available;
   display: flex;
   justify-content: inherit;
 }
-
+*/
 label span,
 label input,
 label input[type="text"],
@@ -152,7 +157,7 @@ label span {
   
 }
 
-.box-login label {
+label {
   display: flex;
   justify-content: center;
   padding: 1em;
@@ -172,7 +177,12 @@ label input[type="submit"] {
   color: #fff;
   cursor: pointer;
   font-family: var(--font-family);
+  width: 100%;
 } 
+
+form label:last-child {
+  flex-grow: 2;
+}
 
 
 #rooms ul {
