@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "Terror301",
-=======
-    "password": "app_pass01",
->>>>>>> e9a436afb186d21a936d67299354e4a820a05d46
     "database": "hotel_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
