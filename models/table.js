@@ -21,11 +21,11 @@ module.exports = function() {
         isEmail: true
       }
     },
-    res_time: {
+    resTime: {
       type: DataTypes.TIME,
       allowNull: false
     },
-    num_party: {
+    numParty: {
       type: DataTypes.INTEGER,
       allowNull: false
     },

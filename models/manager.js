@@ -2,14 +2,14 @@ module.exports = function() {
   const Manager = sequelize.define(
     "Manager",
     {
-      first_name: {
+      firstName: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
           len: [1]
         }
       },
-      last_name: {
+      lastName: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
