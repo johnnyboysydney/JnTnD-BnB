@@ -1,31 +1,31 @@
-module.exports = function() {
+module.exports = function(sequelize, DataTypes) {
   const Table = sequelize.define("Table", {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        is: ["^[a-z]+$", "i"]
+        is: ["^[a-z]+$",'i']
       }
     },
     phone: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
-        not: ["[a-z]", "i"]
+        not: ["[a-z]",'i']
       }
     },
     email: {
-      type: DataTypes.STRING,
+      type:DataTypes.STRING,
       allowNull: false,
-      validate: {
+      validate:  {
         isEmail: true
       }
     },
-    resTime: {
+    res_time: {
       type: DataTypes.TIME,
-      allowNull: false
+      allowNull:false
     },
-    numParty: {
+    num_party: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
@@ -34,11 +34,16 @@ module.exports = function() {
       allowNull: false,
       defaultValue: true
     }
+    
   });
+
   Table.associate = function(models) {
     Table.belongsTo(models.Guest, {
       onDelete: "cascade"
     });
+  
   };
+
+
   return Table;
 };

@@ -1,5 +1,5 @@
-module.exports = function() {
-  const Room = sequelize.define("Room", {
+module.exports = function(sequelize, DataTypes) {
+  var Room = sequelize.define("Room", {
     available: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
@@ -18,7 +18,7 @@ module.exports = function() {
         allowNull: false
       }
     });
-  };
+  }
 
   return Room;
 };
