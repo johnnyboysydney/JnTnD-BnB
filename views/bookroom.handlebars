@@ -3,7 +3,7 @@
   <label>
     <span>Room Number:</span>
     <select name="room" required>
-      <option value="" disabled selected hidden>Choose a room</option>
+      <option value=""disabled selected hidden>Choose a room</option>
       {{#each rooms}}
         {{#if this.available}}
           <option value="{{this.id}}">{{this.id}}</option>
