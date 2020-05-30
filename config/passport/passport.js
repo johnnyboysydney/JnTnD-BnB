@@ -45,8 +45,8 @@ module.exports = function(passport) {
       },
       (req, email, lastName, done) => {
         const data = {
-          firstName: req.body.firstName,
-          lastName: lastName,
+          firstName: req.body.firstname,
+          lastName: lastname,
           phone: req.body.phone,
           email: email,
           roomNumber: req.body.room,
@@ -68,7 +68,7 @@ module.exports = function(passport) {
                   id: req.body.room
                 }
               }
-            ).then(result => {
+            ).then(() => {
               return done(null, user);
             });
           }
