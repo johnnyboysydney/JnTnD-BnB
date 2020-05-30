@@ -11,11 +11,16 @@
 </search>
 
 <h2>All Tables</h2>
-
+<ul>
 {{#each tables}}
-  <a href="/admin/tables/id/{{this.id}}">
-    {{#if this.available}}
-        <div class="room-reserved">{{this.id}}</div>
-      {{/if}}
+<li>
+  <a href="/admin/tables/id/{{this.dataValues.id}}">
+    {{#if this.dataValues.available}}
+      <span class="room-reserved">{{this.dataValues.id}}</span>
+    {{/if}}
+    {{#unless this.dataValues.available}}
+      <span class="room-available">{{this.dataValues.id}}</span>
+    {{/unless}}
   </a>
 {{/each}}
+</li>

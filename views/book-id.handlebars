@@ -1,34 +1,34 @@
 <form action="/admin/book/id/:id" method="POST">
   {{#each rooms}}
-    <h2>Booking Room Number #{{this.id}}</h2>
-    <input type="hidden" name="room" value="{{this.id}}">
+    <h2>Booking Room Number #{{this.dataValues.id}}</h2>
+    <input type="hidden" name="room" value="{{this.dataValues.id}}">
   {{/each}}
   <label>
     <span>First Name</span>
-    <input type="text" name="firstname" placeholder="First Name">
+    <input type="text" name="firstname" placeholder="First Name"  required="required">
   </label>
   <label>
     <span>Last Name</span>
-    <input type="text" name="lastname" placeholder="First Name">
+    <input type="text" name="lastname" placeholder="First Name" required="required">
   </label>
   <label>
     <span>Contact Number</span>
-    <input type="text" name="contactnumber" placeholder="Contact Number">
+    <input type="text" name="contactnumber" placeholder="Contact Number" required="required">
   </label>
   <label>
     <span>Email</span>
-    <input type="text" name="email" placeholder="First Name">
+    <input type="text" name="email" placeholder="Email"  required="required"> 
   </label>
   <label>
     <span>Check-in Date</span>
-    <input type="datetime" name="checkin">
+    <input type="datetime" name="checkin"  required="required">
   </label>
   <label>
     <span>Check-out Date</span>
-    <input type="datetime" name="checkout">
+    <input type="datetime" name="checkout"  required="required">
   </label>
   <label>
-    <input type="submit" name="book" value="Book Now!">
+    <input type="submit" name="book" value="Create Reservation">
   </label>
 </form>
 
@@ -37,59 +37,3 @@
     <button type="submit" id="go-back">Back to Home</button>
   </form>
 </div>
-<script>
-  // Prevent empty input
-  function empty() {
-    var firstname = $("#firstname").val();
-    var lastname = $("#lastname").val();
-    var phone = $("#phone").val();
-    var email = $("#email").val();
-    var checkin = $("#checkin").val();
-    var checkout = $("#checkout").val();
-    var validate = true;
-
-    if (!email) {
-      $("#email-validate").show();
-      validate = false;
-    }
-    else if (email) {
-      $("#email-validate").hide();
-    }
-    if (!firstname) {
-      $("#firstname-validate").show();
-      validate = false;
-    }
-    else if (firstname) {
-      $("#firstname-validate").hide();
-    }
-    if (!lastname) {
-      $("#lastname-validate").show();
-      validate = false;
-    }
-    else if (lastname) {
-      $("#lastname-validate").hide();
-    }
-    if (!phone) {
-      $("#phone-validate").show();
-      validate = false;
-    }
-    else if (phone) {
-      $("#phone-validate").hide();
-    }
-    if (!checkin) {
-      $("#checkin-validate").show();
-      validate = false;
-    }
-    else if (checkin) {
-      $("#checkin-validate").hide();
-    }
-    if (!checkout) {
-      $("#checkout-validate").show();
-      validate = false;
-    }
-    else if (checkout) {
-      $("#checkout-validate").hide();
-    }
-    return validate;
-  }
-</script>
