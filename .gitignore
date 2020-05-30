@@ -4,6 +4,3 @@ node_modules
 config.js
 config/config.json
 package-lock.json
-.gitignore
-package-lock.json
-config/config.json
