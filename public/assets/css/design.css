@@ -32,6 +32,7 @@ html {
 
 
 body {
+  background-attachment: fixed;
   background-image: url(/assets/img/Sydneybackground.jpg);
   background-size: cover;
 }
@@ -47,6 +48,19 @@ nav {
     flex-flow: column;
 }
 
+/*
+nav h1 {
+  background: url(/assets/img/logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  height: 100%;
+}
+*/
+
+nav h1 {
+  display: none;
+}
 nav ul, nav li,
 footer ul, footer li,
 ul li {
@@ -54,6 +68,10 @@ ul li {
   flex-direction: row;
   margin: 0;
   padding: 0;
+}
+nav ul li:first-child { 
+  justify-content: left;
+   flex-grow: 2;
 }
 
 nav a {
@@ -114,3 +132,36 @@ label input[type="submit"] {
   margin-top: 3em;
 }
 
+
+#rooms ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+#roomss li {
+  margin: 0;
+  padding: 1em;
+}
+
+#rooms li a {
+  display: block;
+}
+
+.room-available,
+.room-reserved,
+.room-occupied {
+  background: lightgreen;
+  display: block;
+  margin: .5em;
+  padding: 1em;
+}
+
+.room-reserved {
+  background: lightskyblue;
+}
+
+.room-occupied {
+  background: magenta;
+}
