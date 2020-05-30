@@ -83,7 +83,7 @@ module.exports = function(passport) {
     new LocalStrategy(
       {
         usernameField: "room",
-        passwordField: "lastName",
+        passwordField: "lastname",
         passReqToCallback: true
       },
       (req, room, lastName, done) => {

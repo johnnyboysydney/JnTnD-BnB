@@ -21,7 +21,7 @@ module.exports = function(app, passport) {
     failureRedirect : '/admin/login' 
   })
   );
-  // SIGNUP ==============================
+  // SIGNUP 
   app.get('/admin/signup', function(req, res) {
     res.render('adminsignup');
   });
