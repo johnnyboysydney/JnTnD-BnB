@@ -1,5 +1,5 @@
+<h2>Book a Room</h2>
 <form action="/room/book" method="POST">
-  <h2>Book a Room</h2>
   <label>
     <span>Room Number:</span>
     <select name="room" required>
@@ -29,11 +29,11 @@
   </label>
   <label>
     <span>Check-in Date</span>
-    <input type="datetime" name="checkin">
+    <input type="date" name="checkin">
   </label>
   <label>
     <span>Check-out Date</span>
-    <input type="datetime" name="checkout">
+    <input type="date" name="checkout">
   </label>
   <label>
     <input type="submit" name="book" value="Book Now!">

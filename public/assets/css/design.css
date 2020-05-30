@@ -6,16 +6,21 @@
 
 
 :root {
-  --submit-button: skyblue;
+  --submit-button: #997A1F;
+  --light: #D9AB21;
+  --dark: #997A1F;
+  --font: #333;
+  --font-alt: #997A1F;
+  --font-family-attn: 'Montserrat', sans-serif;
+  --font-family: 'Manrope', sans-serif;
 }
 
 html,
 body,
 .wrapper {
   color: #333;
-  
   height: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Manrope', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -25,6 +30,10 @@ a, a:link, a:hover, a:active, a:focus {
   text-decoration: none;
 }
 
+h1, h2, h3, h4 {
+  color: #997A1F;
+  font-family: 'Montserrat', sans-serif;
+}
 
 html {
   height: 100%;
@@ -100,17 +109,38 @@ nav a {
   padding: 1em;
 }
 
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.box-login {
+  background: white;
+  padding: 1em;
+}
+
 form label {
   color: #333;
   display: block;
+}
+
+form label:first-child {
+  flex-grow: 2;
+  width: -webkit-fill-available;
+  display: flex;
+  justify-content: inherit;
 }
 
 label span,
 label input,
 label input[type="text"],
 label input[type="email"],
+label input[type="number"],
+label input[type="date"],
 label input[type="password"],
-label input[type="submit"] {
+label input[type="submit"],
+label select {
   border: 0;
   display: block;
   margin: 0;
@@ -122,16 +152,27 @@ label span {
   
 }
 
+.box-login label {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
 label input[type="text"],
 label input[type="email"],
-label input[type="password"] {
-  
+label input[type="number"],
+label input[type="password"],
+label input[type="date"],
+label select {
+  border: 1px solid #997A1F;
 }
 
 label input[type="submit"] {
   background:   var(--submit-button);
-  margin-top: 3em;
-}
+  color: #fff;
+  cursor: pointer;
+  font-family: var(--font-family);
+} 
 
 
 #rooms ul {
