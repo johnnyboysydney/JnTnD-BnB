@@ -1,0 +1,38 @@
+{{#each rooms}}
+  <h3>Current Room Information:</h3>
+  <h4>Room #{{this.id}}</h4>
+  {{#unless this.available}}
+    {{#if this.checkin}}
+      <h5><strong>Status:</strong> <span class="occupied">Occupied</span></h5>
+    {{/if}}
+    {{#unless this.checkin}}
+      <h5><strong>Status:</strong> <span class="reserved">Reserved</span></h5>
+    {{/unless}}
+    <ul>
+      <li><strong>First Name:</strong> {{this.Guest.first_name}}</li>
+      <li><strong>Last Name:</strong> {{this.Guest.last_name}}</li>
+      <li><strong>Phone:</strong> {{this.Guest.phone}}</li>
+      <li><strong>Email:</strong> {{this.Guest.email}}</li>
+      <li><strong>Check-in:</strong> {{this.Guest.checkin}}</li>
+      <li><strong>Check-out:</strong> {{this.Guest.checkout}}</li>
+    </ul>
+    {{#if this.checkin}}
+      <form action="/admin/checkout/id/{{this.id}}/?_method=PUT" method="POST">
+        <input type="submit" value="Check Out">
+      </form>
+    {{/if}}
+    {{#unless this.checkin}}
+      <form action="/admin/checkin/id/{{this.id}}/?_method=PUT" method="POST">
+        <input type="submit" value="Check In">
+      </form>
+    {{/unless}}
+  {{/unless}}
+  {{#if this.available}}
+    <h4><strong>Status:</strong> <span class="available">Available</span></h4>
+    <form action="/admin/book/id/{{this.id}}" method="GET">
+      <input type="submit" value="Book This Room">
+    </form>
+  {{/if}}
+{{/each}}
+<br>
+<a href="/admin/rooms">Go Back</a>
