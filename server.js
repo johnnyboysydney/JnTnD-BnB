@@ -17,7 +17,7 @@ app.use(methodOverride("_method"));
 
 app.use(
   session({
-    secret: "keyboard cat",
+    secret: "Astronaut Mars",
     resave: true,
     saveUninitialized: true
   })
