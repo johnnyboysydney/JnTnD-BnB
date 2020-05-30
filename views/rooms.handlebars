@@ -12,16 +12,16 @@
 <ul>
 
 	{{#each rooms}}
-		<li><a href="/admin/rooms/id/{{this.id}}">
+		<li><a href="/admin/rooms/id/{{this.dataValues.id}}">
 			{{#if this.available}}
-			  <span class="room-available">{{this.id}}</span>
+			  <span class="room-available">{{this.dataValues.id}}</span>
 			{{/if}}
 			{{#unless this.available}}
         {{#unless this.checkin}}
-          <span class="room-reserved">{{this.id}}</span>
+          <span class="room-reserved">{{this.dataValues.id}}</span>
         {{/unless}}
         {{#if this.checkin}}
-          <span class="room-occupied">{{this.id}}</span>
+          <span class="room-occupied">{{this.dataValues.id}}</span>
         {{/if}}
 			{{/unless}}
 		</a>
