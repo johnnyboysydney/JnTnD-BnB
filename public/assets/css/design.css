@@ -4,14 +4,113 @@
   box-sizing: border-box;
 }
 
+
+:root {
+  --submit-button: skyblue;
+}
+
 html,
 body,
 .wrapper {
+  color: #333;
+  
   height: 100%;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
 }
 
+a, a:link, a:hover, a:active, a:focus {
+  color: #333;
+  text-decoration: none;
+}
+
+
 html {
   height: 100%;
 }
+
+
+body {
+  background-image: url(/assets/img/Sydneybackground.jpg);
+  background-size: cover;
+}
+
+nav {
+  background: whitesmoke;
+}
+
+.container.main {
+  display: flex;
+    height: 100%;
+    width: 100%;
+    flex-flow: column;
+}
+
+nav ul, nav li,
+footer ul, footer li,
+ul li {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  padding: 1em;
+}
+
+
+#main {
+  background: rgba(255, 255, 255, 0.7);
+  flex-grow: 1;
+  margin: 0 auto;
+  padding: 2em;
+  width: 760px;
+}
+
+#landing {
+  display: flex;
+  flex-flow: row;
+}
+
+#landing a {
+  background: var(--submit-button);
+  display: block;
+  font-size: 1.2em;
+  padding: 1em;
+}
+
+form label {
+  color: #333;
+  display: block;
+}
+
+label span,
+label input,
+label input[type="text"],
+label input[type="email"],
+label input[type="password"],
+label input[type="submit"] {
+  border: 0;
+  display: block;
+  margin: 0;
+  padding: 1em;
+  min-width: 250px;
+}
+
+label span {
+  
+}
+
+label input[type="text"],
+label input[type="email"],
+label input[type="password"] {
+  
+}
+
+label input[type="submit"] {
+  background:   var(--submit-button);
+  margin-top: 3em;
+}
+
