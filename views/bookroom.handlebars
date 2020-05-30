@@ -5,8 +5,8 @@
     <select name="room" required>
       <option value=""disabled selected hidden>Choose a room</option>
       {{#each rooms}}
-        {{#if this.available}}
-          <option value="{{this.id}}">{{this.id}}</option>
+        {{#if this.dataValues.available}}
+          <option value="{{this.dataValues.id}}">{{this.dataValues.id}}</option>
         {{/if}}
       {{/each}}
     </select>
