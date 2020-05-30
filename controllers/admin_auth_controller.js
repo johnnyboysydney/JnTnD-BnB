@@ -19,7 +19,8 @@ module.exports = function(app, passport) {
   app.post('/admin/login', passport.authenticate('admin-login', {
     successRedirect : '/admin/menu', 
     failureRedirect : '/admin/login' 
-
+  })
+  );
   // SIGNUP ==============================
   app.get('/admin/signup', function(req, res) {
     res.render('adminsignup');
