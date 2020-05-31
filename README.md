@@ -54,7 +54,32 @@ Section under construction
 
 ### Dependencies
 
-Section under construction
+Production:
+- bycrypt
+- bycrypt-node.js
+- bycryptjs
+- connect-flash
+- express
+- express-handlebars
+- express-session
+- jest
+- method-override
+- mysql2
+- passport
+- passport-local
+- sequelize
+- yelp
+- yelp-fusion
+
+Development
+- chai
+- chai-http
+- cross-env
+- eslit
+- eslit-config-prettier
+- eslit-plugin-prettier
+- moscha
+- prettier
 
 ## Tests
 
