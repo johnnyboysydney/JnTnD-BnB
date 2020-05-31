@@ -1,0 +1,62 @@
+
+
+		<h2>Find Fun Near Che Jerome!</h2>
+		<hr>
+		<br>
+		<br>
+
+		<form action = "/api/yelp" method ="POST">
+		
+			<h3><strong>Yelp Search</strong></h3>
+			<h4>Find</h4>
+			<input type="text" name="term" id="venue", placeholder="Starbucks" class="form-control" required >
+
+			<h4>Near</h4>
+			<input type="text" name="location" id="location", placeholder="San Francisco, CA" class="form-control" required >
+
+
+			<!-- Submit Button -->
+
+			<button type="submit" class="btn btn-med btn-secondary btn-lg" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i> Search
+			</button>
+
+		</form>
+
+
+
+
+		<hr>
+
+
+	<!-- Display Yelp Results -->
+	<div class="row" style="padding:20px;">
+
+		<h1> Results </h1>
+		{{#each business}}
+
+			<h4>
+			<li>
+			{{name}} -
+			{{location}} -
+			Phone Number: {{phone}} -
+			Currently Open: {{open}} -
+			Rating: {{rating}}
+			</li>
+			</h4>
+
+
+
+
+		{{/each}}
+
+
+		
+
+	<div class = "yelpResults">
+	
+	</div><!-- close row -->
+
+</div>
+	  
+
+ 
