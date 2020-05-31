@@ -349,3 +349,23 @@ ul.results span {
 .danger {
   background: #b0173b !important;
 }
+
+
+
+@keyframes loader {
+  from {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+body {
+  
+  animation: loader 20s linear;
+  animation-iteration-count: infinite;
+}
