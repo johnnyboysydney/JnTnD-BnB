@@ -27,7 +27,9 @@
     "mysql2": "^1.7.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "sequelize": "^5.21.11"
+    "sequelize": "^5.21.11",
+    "yelp": "^1.0.2",
+    "yelp-fusion": "^3.0.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
