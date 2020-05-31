@@ -7,7 +7,7 @@ const session = require("express-session");
 
 // Sets up the Express App
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 9000;
 
 // Models to sync
 const db = require("./models");
@@ -35,6 +35,7 @@ app.use(express.static("public"));
 app.use(require("./controllers/index_controller"));
 app.use(require("./controllers/guest_controller"));
 app.use(require("./controllers/table_controller"));
+app.use(require("./controllers/api-yelp"));
 
 require("./controllers/guest_auth_controller")(app, passport);
 require("./controllers/admin_auth_controller")(app, passport);
