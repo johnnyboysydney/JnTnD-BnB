@@ -2,17 +2,11 @@ module.exports = function(sequelize, DataTypes) {
   var Table = sequelize.define("Table", {
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        is: ["^[a-z]+$",'i']
-      }
+      allowNull: false
     },
     phone: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        not: ["[a-z]",'i']
-      }
+      allowNull: false
     },
     email: {
       type:DataTypes.STRING,

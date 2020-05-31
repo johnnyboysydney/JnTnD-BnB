@@ -3,7 +3,7 @@
   <label>
     <span>Room Number:</span>
     <select name="room" required>
-      <option value=""disabled selected hidden>Choose a room</option>
+      <option value="">Choose a room</option>
       {{#each rooms}}
         {{#if this.dataValues.available}}
           <option value="{{this.dataValues.id}}">{{this.dataValues.id}}</option>
@@ -38,4 +38,4 @@
   <label>
     <input type="submit" name="book" value="Book Now!">
   </label>
-</form>
+</form> 

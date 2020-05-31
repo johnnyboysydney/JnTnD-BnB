@@ -2,31 +2,30 @@
 <form action="/tables" method="post">
   <label>
     <span>Name</span>
-    <input type="text" name="name" placeholder="Please enter your name" required="required">
+    <input type="text" name="name" placeholder="Please enter your name" required="required" value="abcde">
   </label>
   <label>
     <span>Contact Number</span>
-    <input type="text" name="phone" placeholder="Please enter your phone" required="required">
+    <input type="text" name="phone" placeholder="Please enter your phone" required="required"  value="2131231">
   </label>
   <label>
-    <span>
-      Email
-    </span>
-    <input type="email" name="email" placeholder="Please enter your email"  required="required">
+    <span>Email</span>
+    <input type="email" name="email" placeholder="Please enter your email"  required="required"  value="test@test.com">
   </label>
   <label>
     <span>Time</span>
-    <input type="time" name="res_time" placeholder=""  required="required">
+    <input type="time" name="res_time" placeholder=""  required="required"  value="12:12:00">
   </label>
   <label>
     <span>Number of People</span>
-    <input type="text" name="num_party" placeholder="How many people are in your party?"  required="required">
+    <input type="text" name="num_party" placeholder="How many people are in your party?"  required="required"  value="6">
   </label>
   <label>
     <input type="submit" value="Make reservation">
   </label>
 </form>
 
+<!--
 {{#each tables}}
   {{#if this.dataValues.available}}
   <li class="list-group-item">
@@ -43,3 +42,76 @@
   </li>
   {{/if}}
 {{/each}}
+-->
+
+<script>
+  $("form").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    const subData = Object.fromEntries(
+      Object.entries(event.target)
+      .filter(d => 
+        {
+          if (d[1].type === 'text' 
+          || d[1].type === 'email'
+          || d[1].type === 'time') {
+                
+            return d;
+          }
+        }
+      )
+      .map(d => 
+        {
+          return [ d[1].name, d[1].value ]
+        }
+      )
+    );
+
+    $.ajax(event.target.action, {
+      type: "POST",
+      data: subData
+    })
+    .then((data) => {
+
+      
+      let templateData = data.data;
+
+      let html = $('.template.reservation').html();
+      let template = Handlebars.compile(html);
+      let compliedHtml = template(templateData);
+      let popBox = $(compliedHtml);
+      $('body').append(popBox);
+
+      popBox.removeClass('inactive');
+      
+
+    });
+
+    /*
+
+    $.ajax(event.target.action, {
+      type: "POST",
+      data: data
+    })
+    .then();
+
+    //console.log(event.target.action);
+/*
+    var newCat = {
+      name: $("#ca").val().trim(),
+      sleepy: $("[name=sleepy]:checked").val().trim()
+    };
+
+    // Send the POST request.
+    $.ajax("/api/cats", {
+      type: "POST",
+      data: newCat
+    }).then(
+      function() {
+
+      }
+    );
+  */
+  });
+</script>

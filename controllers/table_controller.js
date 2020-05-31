@@ -20,8 +20,13 @@ router.post("/tables", (req, res) => {
     num_party: req.body.num_party,
     res_time: req.body.res_time 
   })
-  .then(() => {
-    res.redirect("/tables");
+  .then((result) => {
+    //console.log(res);
+    const data = result.dataValues;
+
+    res.json({ data });
+    //console.log(res);
+    //res.redirect("/tables");
   })
 
   return;

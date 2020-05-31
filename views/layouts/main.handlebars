@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>JnTnD = BnB</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/handlebars.min-v4.7.3.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Montserrat:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="/assets/css/design.css" type="text/css">
 	<link rel="icon" type="image/png" href="/assets/img/favicon.png">
 </head>
-<body>
+<body id="test">
   <div class="container main">
     <nav>
       <h1>JnTnD Hotels</h1>
@@ -27,5 +28,21 @@
 		  {{{body}}}
     </div>
   </div>
+  <div class="template reservation">
+    <div class="popup-box inactive template">
+      <div class="container">
+        <h2>Your Reservation has been confirmed.</h2>
+        <p>Your table # is {\{this.id}} <br />
+          Name: {\{this.name}} <br />
+          Number in Party: {\{this.num_party}} <br />
+          Reservation Time: {\{this.res_time}}</p>
+        <span class="close"></span>
+        <form action="/tables/{\{this.id}}?_method=DELETE" method="POST">
+          <input class="danger" type="submit" value="Cancel Reservation">
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
+<script src="assets/js/app.js"></script>
 </html>
