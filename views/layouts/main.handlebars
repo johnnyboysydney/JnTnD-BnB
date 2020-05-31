@@ -3,29 +3,62 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>JnTnD = BnB</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Montserrat:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="/assets/css/design.css" type="text/css">
-	<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+	<title>Chez Jerome</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- jQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- CSS Stylesheet -->
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Lato" rel="stylesheet">
+	<link rel="icon" type="image/png" href="/assets/img/fav-square.png">
 </head>
 <body>
+	<nav class="navbar navbar-inverse navbar-static-top example-8">
+	    <div class="container">
+	      <div class="navbar-header">
+	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar8">
+	          <span class="sr-only">Toggle navigation</span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	        </button>
+	        <a class="navbar-brand text-hide" href="/">Chez Jerome
+	        </a>
+	      </div>
+	      <div id="navbar8" class="navbar-collapse collapse">
+	        <ul class="nav navbar-nav navbar-right">
+	          <li class="active"><a href="/">Home</a></li>
+	          <li><a href="/guest">Guest Login</a></li>
+	          <li><a href="/room/book">Book Room</a></li>
+	          <li><a href="/tables">Restaurant</a></li>
+	          <li><a href="/yelp">Activities</a></li>
+	        </ul>
+	      </div>
+	      <!--/.nav-collapse -->
+	    </div>
+	    <!--/.container-fluid -->
+	  </nav>	  
+		  <!-- <img src="/assets/img/LOGOfinal.png" alt="Chez Jerome"> -->
   <div class="container main">
-    <nav>
-      <h1>JnTnD Hotels</h1>
-      <ul role="navigation">
-        <li class="active"><a href="/">Home</a></li>
-        <li><a href="/guest">Guest Login</a></li>
-        <li><a href="/admin">Admin Login</a></li>
-        <li><a href="/room/book">Book Room</a></li>
-        <li><a href="/tables">Restaurant</a></li>
-        <li><a href="/yelp">Activities</a></li>
-      </ul>
-    </nav>
-    <div id="main">
-		  {{{body}}}
-    </div>
+		{{{ body }}}
   </div>
+
+<!-- Footer Region -->
+<!-- <div class="row">
+  <div class="col-sm-12">
+
+	<footer class="footer">
+		<div class="container">
+		    Line Break followed by closing
+		    <hr>
+		    <h5 class="text-center"><small>Copyright Group 7: Chez Jerome Inc.</small></h5>
+		</div>
+	</footer>
+  </div>
+</div> -->
+
 </body>
 </html>

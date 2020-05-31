@@ -1,38 +1,35 @@
 {{#each rooms}}
   <h3>Current Room Information:</h3>
-  <h4>Room #{{this.dataValues.id}}</h4>
-  {{#unless this.dataValues.available}}
-    {{#if this.dataValues.checkin}}
-      <h5><strong>Status:</strong> <span class="occupied">Occupied</span></h5>
+  <h4><strong>Room #{{this.id}}</strong></h4>
+  {{#unless this.available}}
+    {{#if this.checkin}}
+      <h4><strong>Status:</strong> <span class="occupied">Occupied</span></h4>
     {{/if}}
-    {{#unless this.dataValues.checkin}}
-      <h5><strong>Status:</strong> <span class="reserved">Reserved</span></h5>
+    {{#unless this.checkin}}
+      <h4><strong>Status:</strong> <span class="reserved">Reserved</span></h4>
     {{/unless}}
-    <ul>
-      <li><strong>First Name:</strong> {{this.dataValues.Guest.first_name}}</li>
-      <li><strong>Last Name:</strong> {{thisdataValues..Guest.last_name}}</li>
-      <li><strong>Phone:</strong> {{this.dataValues.Guest.phone}}</li>
-      <li><strong>Email:</strong> {{this.dataValues.Guest.email}}</li>
-      <li><strong>Check-in:</strong> {{this.dataValues.Guest.checkin}}</li>
-      <li><strong>Check-out:</strong> {{thisdataValues..Guest.checkout}}</li>
-    </ul>
-    {{#if this.dataValues.checkin}}
-      <form action="/admin/checkout/id/{{this.dataValues.id}}/?_method=PUT" method="POST">
-        <input type="submit" value="Check Out">
+    <p><strong>First Name:</strong> {{this.Guest.first_name}}</p>
+    <p><strong>Last Name:</strong> {{this.Guest.last_name}}</p>
+    <p><strong>Phone:</strong> {{this.Guest.phone}}</p>
+    <p><strong>Email:</strong> {{this.Guest.email}}</p>
+    <p><strong>Check-in:</strong> {{this.Guest.checkin}}</p>
+    <p><strong>Check-out:</strong> {{this.Guest.checkout}}</p>
+    {{#if this.checkin}}
+      <form action="/admin/checkout/id/{{this.id}}/?_method=PUT" method="POST">
+        <button class="btn btn-default" type="submit">Check Out</button>
       </form>
     {{/if}}
-    {{#unless this.dataValues.checkin}}
-      <form action="/admin/checkin/id/{{this.dataValues.id}}/?_method=PUT" method="POST">
-        <input type="submit" value="Check In">
+    {{#unless this.checkin}}
+      <form action="/admin/checkin/id/{{this.id}}/?_method=PUT" method="POST">
+        <button class="btn btn-default" type="submit">Check In</button>
       </form>
     {{/unless}}
   {{/unless}}
-  {{#if this.dataValues.available}}
+  {{#if this.available}}
     <h4><strong>Status:</strong> <span class="available">Available</span></h4>
-    <form action="/admin/book/id/{{this.dataValues.id}}" method="GET">
-      <input type="submit" value="Book This Room">
-    </form>
+    <form action="/admin/book/id/{{this.id}}" method="GET"><button class="btn btn-default">Book This Room</button></form>
   {{/if}}
 {{/each}}
 <br>
-<a href="/admin/rooms">Go Back</a>
+<a href="/admin/rooms"><button class="btn btn-default">Go Back</button></a>
+<div class="row" style="padding-bottom:20px;"></div>
