@@ -1,12 +1,13 @@
+<h2>Room Information</h2>
 {{#each rooms}}
-  <h3>Current Room Information:</h3>
-  <h4>Room #{{this.dataValues.id}}</h4>
+<div class="box-login">
+  <h3>Current Room: #{{this.dataValues.id}}</h3>
   {{#unless this.dataValues.available}}
     {{#if this.dataValues.checkin}}
-      <h5><strong>Status:</strong> <span class="occupied">Occupied</span></h5>
+      <h4><strong>Status:</strong> <span class="occupied">Occupied</span></h4>
     {{/if}}
     {{#unless this.dataValues.checkin}}
-      <h5><strong>Status:</strong> <span class="reserved">Reserved</span></h5>
+      <h4><strong>Status:</strong> <span class="reserved">Reserved</span></h4>
     {{/unless}}
     <ul>
       <li><strong>First Name:</strong> {{this.Guest.dataValues.first_name}}</li>
@@ -18,21 +19,34 @@
     </ul>
     {{#if this.dataValues.checkin}}
       <form action="/admin/checkout/id/{{this.dataValues.id}}/?_method=PUT" method="POST">
+      <label>
         <input type="submit" value="Check Out">
+      </label>
       </form>
     {{/if}}
     {{#unless this.dataValues.checkin}}
       <form action="/admin/checkin/id/{{this.dataValues.id}}/?_method=PUT" method="POST">
+      <label>
         <input type="submit" value="Check In">
+      </label>
+      </form>
+      <form action="/admin/cancel/id/{{this.dataValues.id}}/?_method=PUT" method="POST">
+      <label>
+        <input class="danger" type="submit" value="Cancel Reservation" disabled>
+      </label>
       </form>
     {{/unless}}
   {{/unless}}
   {{#if this.dataValues.available}}
     <h4><strong>Status:</strong> <span class="available">Available</span></h4>
     <form action="/admin/book/id/{{this.dataValues.id}}" method="GET">
+    <label>
       <input type="submit" value="Book This Room">
+      </label>
     </form>
   {{/if}}
+
 {{/each}}
-<br>
-<a href="/admin/rooms">Go Back</a>
+<a class="nav-back" href="/admin/rooms">Go Back</a>
+
+</div>

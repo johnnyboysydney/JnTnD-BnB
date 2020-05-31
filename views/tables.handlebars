@@ -1,3 +1,4 @@
+<h1>Restaurant</h1>
 <form action="/tables" method="post">
   <label>
     <span>Name</span>
@@ -25,3 +26,20 @@
     <input type="submit" value="Make reservation">
   </label>
 </form>
+
+{{#each tables}}
+  {{#if this.dataValues.available}}
+  <li class="list-group-item">
+    <div class="input-group">
+      <p class="lead">Your Reservation has been confirmed. <br>
+      Your table # is {{this.dataValues.id}} <br>
+      Name: {{this.dataValues.name}} <br>
+      Number in Party: {{this.dataValues.num_party}} <br>
+      Reservation Time: {{this.dataValues.res_time}}</p>
+      <form action="/tables/{{this.dataValues.id}}?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-big btn-secondary btn-lg" id="trash">Cancel Resv<span class="  glyphicon glyphicon-trash"></span></button>
+    </form>
+    </div>
+  </li>
+  {{/if}}
+{{/each}}

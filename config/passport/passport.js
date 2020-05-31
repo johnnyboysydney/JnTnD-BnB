@@ -45,11 +45,11 @@ module.exports = function(passport) {
       },
       (req, email, lastName, done) => {
         const data = {
-          firstName: req.body.firstname,
-          lastName: lastname,
+          first_name: req.body.firstname,
+          last_name: lastName,
           phone: req.body.phone,
           email: email,
-          roomNumber: req.body.room,
+          room_number: req.body.room,
           checkin: req.body.checkin,
           checkout: req.body.checkout
         };
@@ -83,20 +83,21 @@ module.exports = function(passport) {
     new LocalStrategy(
       {
         usernameField: "room",
-        passwordField: "lastname",
+        passwordField: "lastName",
         passReqToCallback: true
       },
       (req, room, lastName, done) => {
+        
         Guest.findOne({
           where: {
-            roomNmber: room
+            room_number: room
           }
         })
           .then(result => {
             if (!result) {
               return done(null, false, { message: "User was not found." });
             }
-            if (result.last_name.toLowerCase() !== lastname.toLowerCase()) {
+            if (result.last_name.toLowerCase() !== lastName.toLowerCase()) {
               return done(null, false, { message: "Incorrect password." });
             }
             return done(null, result);
@@ -137,8 +138,8 @@ module.exports = function(passport) {
           const data = {
             email: email,
             password: managerPassword,
-            firstName: req.body.firstname,
-            lastName: req.body.lastname
+            first_name: req.body.firstname,
+            last_name: req.body.lastName
           };
           Admin.create(data).then((newManager, created) => {
             if (!newManager) {

@@ -9,24 +9,32 @@
 </form>
 
 <h2>All Rooms</h2>
-<ul>
+<ul class="availability">
 
 	{{#each rooms}}
-		<li><a href="/admin/rooms/id/{{this.dataValues.id}}">
-			{{#if this.available}}
-			  <span class="room-available">{{this.dataValues.id}}</span>
+		<li><a href="/admin/rooms/id/{{this.dataValues.id}}" class="
+			{{#if this.dataValues.available}}
+			  room-available
 			{{/if}}
-			{{#unless this.available}}
-        {{#unless this.checkin}}
-          <span class="room-reserved">{{this.dataValues.id}}</span>
+			{{#unless this.dataValues.available}}
+        {{#unless this.dataValues.checkin}}
+          room-reserved
         {{/unless}}
-        {{#if this.checkin}}
-          <span class="room-occupied">{{this.dataValues.id}}</span>
+        {{#if this.dataValues.checkin}}
+          room-occupied
         {{/if}}
 			{{/unless}}
+    ">
+      {{this.dataValues.id}}
 		</a>
   </li>
 	{{/each}}
 </ul>
-// ADD status reference
+
+<ul class="legend">
+  <li><span class="room-available">Room Available</span></li>
+  <li><span class="room-reserved">Room Reserved</span></li>
+  <li><span class="room-occupied">Room Occupied</span></li>
+</ul>
+
 <a href="/admin/menu">Manager Menu</a>

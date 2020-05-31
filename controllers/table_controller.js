@@ -12,26 +12,52 @@ router.get("/tables", (req, res) => {
 
 //adding a reservations to the list
 router.post("/tables", (req, res) => {
+
   db.Table.create({
     name: req.body.name,
     phone: req.body.phone,
     email: req.body.email,
-    numParty: req.body.num_party,
-    resTime: req.body.res_time
-  }).then(data => {
+    num_party: req.body.num_party,
+    res_time: req.body.res_time 
+  })
+  .then(() => {
+    res.redirect("/tables");
+  })
+
+  return;
+
+  
+  
+  db.Table.create({
+    name: req.body.name,
+    phone: req.body.phone,
+    email: req.body.email,
+    num_party: req.body.num_party,
+    res_time: req.body.res_time 
+  })
+  .then(data => {
+    
+    //res.redirect("/tables");
+
+    /*
     db.Table.update(
       {
-        GuestId: data.dataValues.id,
+        GuestId: data.id,
         available: false
       },
-      {
+      { 
         where: {
           id: req.body.id
         }
       }
-    ).then(() => {
-      res.redirect("/tables");
+    )
+    .then(() => {
+
+      //console.log('FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF');
+      res.redirect("/tables/2");
     });
+    */
+
   });
 });
 
@@ -46,4 +72,4 @@ router.delete("/tables/:id", (req, res) => {
   });
 });
 
-module.exports = router;
+  module.exports = router;

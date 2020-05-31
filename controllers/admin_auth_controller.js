@@ -39,7 +39,7 @@ module.exports = function(app, passport) {
   // we will want this protected so you have to be logged in to visit
   // we will use route middleware to verify this (the isLoggedIn function)
   app.get('/admin/rooms', isLoggedIn, function(req, res) {
-    db.Room.findAll({}).then(function(result) {
+    db.Room.findAll().then(function(result) {
       res.render("rooms", {
         rooms: result
       });
@@ -63,6 +63,7 @@ module.exports = function(app, passport) {
       },
       include: [db.Guest]
     }).then(function(result) {
+      console.table(result);
       res.render("room", {
         rooms: result
       });
@@ -75,6 +76,7 @@ module.exports = function(app, passport) {
         id: req.params.id
       }
     }).then(function(result) {
+      
       res.render("book-id", {rooms: result});
     });
   });
