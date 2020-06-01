@@ -7,6 +7,7 @@
 	<title>JnTnD = BnB</title>
 	<script src="/assets/js/jquery-3.4.1.min.js"></script>
   <script src="/assets/js/handlebars.min-v4.7.3.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Montserrat:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="/assets/css/design.css" type="text/css">
 	<link rel="icon" type="image/png" href="/assets/img/favicon.png">
@@ -16,12 +17,8 @@
     <nav>
       <h1>JnTnD Hotels</h1>
       <ul role="navigation">
-        <li class="active"><a href="/">Home</a></li>
-        <li><a href="/guest">Guest Login</a></li>
-        <li><a href="/admin">Admin Login</a></li>
-        <li><a href="/room/book">Book Room</a></li>
-        <li><a href="/tables">Restaurant</a></li>
-        <li><a href="/yelp">Activities</a></li>
+        {{test}}
+        {{>nav}}
       </ul>
       <div id="weather" data-description="">
         <span class="weather-location">Sydney, Australia</span>

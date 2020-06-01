@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require("../models");
 
 router.get("/", (req, res) => {
-  res.render("index");
+  res.render("index"});
 });
 
 router.get("/guest/login", (req, res) => {

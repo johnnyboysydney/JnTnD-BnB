@@ -475,3 +475,44 @@ body {
 .weather-temp {
   display: block;
 }
+
+.nav-admin,
+.nav-admin li {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-admin {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.nav-admin li {
+  margin: 0 0 1em;
+  text-align: center;
+  width: calc(50% - 0.5em);
+}
+
+.nav-admin a {
+  background: var(--submit-button);
+  display: block;
+  padding: 2em 1em;
+  width: 100%;
+}
+
+.nav-admin span {
+  display: block;
+}
+
+.legend {
+  justify-content: center;
+  display: flex;
+  margin: 1em;
+  padding: 0;
+}
+
+.legend li {
+  margin: 0;
+  padding; 0;
+}
