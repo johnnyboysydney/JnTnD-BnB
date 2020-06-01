@@ -3,8 +3,8 @@ var bCrypt = require("bcrypt-nodejs");
 const db = require("../../models");
 
 module.exports = function(passport) {
-  const Guest = db.Guest;
-  const Admin = db.Manager;
+  var Guest = db.Guest;
+  var Admin = db.Manager;
 
   passport.serializeUser((user, done) => {
     return done(null, { id: user.id, isAdmin: user.isAdmin });
@@ -34,9 +34,52 @@ module.exports = function(passport) {
     }
   });
 
+
+  /*
+
+
+
+  */
+
+    // FAKE LOGIN
+    passport.use(
+      "guestlogin",
+      new LocalStrategy(
+        {
+          usernameField: "room",
+          passwordField: "lastname",
+          passReqToCallback: true
+        },
+        (req, room, lastname, done) => {       
+
+         Guest.findOne({
+            where: {
+              last_name: lastname,
+              room_number: room
+            }
+          })
+          .then((user, created) => {
+          
+            if (!user) {
+              return done(null, false);
+            } else if (user) {
+              return done(null, user);
+            }
+
+          });
+        }
+      )
+    );
+
+
+    /*
+
+
+    */
+
   // Guest Signup
   passport.use(
-    "local-signup",
+    "guest-book",
     new LocalStrategy(
       {
         usernameField: "email",
@@ -44,6 +87,7 @@ module.exports = function(passport) {
         passReqToCallback: true
       },
       (req, email, lastname, done) => {
+
         const data = {
           first_name: req.body.firstname,
           last_name: lastname,
@@ -73,39 +117,6 @@ module.exports = function(passport) {
             });
           }
         });
-      }
-    )
-  );
-
-  // Guest signin
-  passport.use(
-    "local-signin",
-    new LocalStrategy(
-      {
-        usernameField: "room",
-        passwordField: "lastname",
-        passReqToCallback: true
-      },
-      (req, room, lastname, done) => {
-        
-        Guest.findOne({
-          where: {
-            room_number: room
-          }
-        })
-          .then(result => {
-            if (!result) {
-              return done(null, false, { message: "User was not found." });
-            }
-            if (result.last_name.toLowerCase() !== lastname.toLowerCase()) {
-              return done(null, false, { message: "Incorrect password." });
-            }
-            return done(null, result);
-          })
-          .catch(err => {
-            console.log("Error:", err);
-            return done(null, false, { message: "Error with sign in" });
-          });
       }
     )
   );
@@ -191,4 +202,83 @@ module.exports = function(passport) {
       }
     )
   );
+
+  // Manager signin
+  passport.use(
+    "admin-login2",
+    new LocalStrategy(
+      {
+        usernameField: "email",
+        passwordField: "password",
+        passReqToCallback: true
+      },
+      (req, email, password, done) => {
+        const isValidPassword = function(userpass, password) {
+          return bCrypt.compareSync(password, userpass);
+        };
+        Admin.findOne({
+          where: {
+            email: email
+          }
+        })
+          .then(result => {
+            if (!result) {
+              return done(null, false, {
+                message: "Email does not exist."
+              });
+            }
+            if (!isValidPassword(result.password, password)) {
+              return done(null, false, { message: "Incorrect password." });
+            }
+            return done(null, result);
+          })
+          .catch(err => {
+            
+            return done(null, false, {
+              message: "Something went wrong with your Sign-in"
+            });
+          });
+      }
+    )
+  );
+
+  // Guest signin
+  passport.use(
+    "guest-login",
+    new LocalStrategy(
+      {
+        usernameField: "room",
+        passwordField: "lastname",
+        passReqToCallback: true
+      },
+      (req, room, lastname, done) => {
+        
+        return done(null, false, { message: "Error with sign in" });
+
+        db.Guest.findOne({
+          where: {
+            room_number: room
+          }
+        })
+        .then(result => {     
+
+            if (!result) {
+              return done(null, false, { message: "User was not found." });
+            }
+            if (result.last_name.toLowerCase() !== lastname.toLowerCase()) {
+              return done(null, false, { message: "Incorrect password." });
+            }
+            return done(null, result);
+          })
+          .catch(err => {
+            console.log("Error:", err);
+            return done(null, false, { message: "Error with sign in" });
+          });
+      }
+    )
+  );
+
+
 };
+
+

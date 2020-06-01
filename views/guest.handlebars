@@ -1,6 +1,6 @@
 {{#each guest}}
 <section class="guest-info">
-  <h2>Current Guest Information:</h2>
+  <h2>Current Guest Information: </h2>
   <form action="/guest/checkout/?_method=PUT" method="POST">
   <h3>Room #{{this.dataValues.room_number}}</h3>
   <ul>
@@ -11,19 +11,10 @@
     <li><strong>Check-in:</strong> {{this.dataValues.checkin}}</li>
     <li><strong>Check-out:</strong> {{this.dataValues.checkout}}</li>
   </ul>
-  
-  
-    <label> 
-      <input type="submit" value="Check Out">
-    </label>
-  </form>
 
-  <footer>
-    <ul>
-      <li><a href="/tables">Restaurant Reservation</a></li>
-      <li><a href="/guest/logout">Sign Out</a></li>
-    </ul>
-    
-  </footer>
+  <label> 
+    <input type="submit" value="Check Out">
+  </label>
+</form>
 </section>
 {{/each}}

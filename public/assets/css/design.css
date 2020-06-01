@@ -87,8 +87,20 @@ nav ul {
 }
 nav ul li:first-child { 
   justify-content: left;
-   flex-grow: 2;
+  flex-grow: 2;
 }
+
+#guest-view nav li {
+  display: none;
+}
+
+#guest-view nav li:last-child,
+#guest-view nav li:last-child a {
+  display: block;
+  
+}
+
+
 
 nav a,
 nav a:hover,

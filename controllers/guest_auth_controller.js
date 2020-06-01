@@ -3,11 +3,26 @@ const db = require("../models");
 module.exports = function(app, passport) {
   app.post(
     "/room/book",
-    passport.authenticate("local-signup", {
+    passport.authenticate("guest-book", {
       successRedirect: "/guest",
       failureRedirect: "/"
     })
   );
+  
+  app.get("/guest/login", (req, res) => {
+    res.render("guestbook");
+  });
+
+  app.post(
+    "/guest/login",
+    passport.authenticate("guestlogin", {
+      successRedirect: "/guest",
+      failureRedirect: "/fail"
+    })
+  );
+  
+
+
 
   app.get("/guest", isLoggedIn, (req, res) => {
     db.Guest.findAll({
@@ -17,7 +32,8 @@ module.exports = function(app, passport) {
       include: [db.Room]
     }).then(result => {
       res.render("guest", {
-        guest: result
+        guest: result,
+        guestsignout: true
       });
     });
   });
@@ -30,14 +46,6 @@ module.exports = function(app, passport) {
       res.redirect("/");
     });
   });
-
-  app.post(
-    "/guest/login",
-    passport.authenticate("local-signin", {
-      successRedirect: "/guest",
-      failureRedirect: "/guest/login"
-    })
-  );
 
   app.put("/guest/checkout", isLoggedIn, (req, res) => {
     req.session.destroy(err => {
@@ -69,9 +77,9 @@ module.exports = function(app, passport) {
   });
 
   function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
+    if (req.isAuthenticated())
       return next();
-    }
-    res.redirect("/guest/login");
+
+    res.redirect('/guest/login');
   }
 };

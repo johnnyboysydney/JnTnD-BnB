@@ -12,13 +12,16 @@
 	<link rel="stylesheet" href="/assets/css/design.css" type="text/css">
 	<link rel="icon" type="image/png" href="/assets/img/favicon.png">
 </head>
-<body id="test">
+<body id="{{tpl}}">
   <div class="container main">
     <nav>
       <h1>JnTnD Hotels</h1>
       <ul role="navigation">
         {{test}}
         {{>nav}}
+        {{#if guestsignout}}
+        <li><a href="/guest/logout">Sign Out</a></li>
+        {{/if}}
       </ul>
       <div id="weather" data-description="">
         <span class="weather-location">Sydney, Australia</span>
