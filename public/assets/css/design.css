@@ -95,7 +95,7 @@ nav a {
  }
 
 #main {
-
+  background: rgba(255,255,255,0.2);
 /*  flex-grow: 1;*/
   margin: 0 auto;
   padding: 2em;
