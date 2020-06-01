@@ -64,7 +64,7 @@ nav h1 {
   background-repeat: no-repeat;
   display: block;
   height: 50px;
-  margin: 0;
+  margin: 0.5em;
   color: rgba(0,0,0,0);
   background-position: center;
 }
@@ -460,4 +460,18 @@ body {
 
 .popup-box .close:before {
   content: "close";
+}
+
+#weather {
+  position: absolute;
+  right: 1em;
+  text-align: right;
+  top: 0.5em;
+}
+
+.weather-temp:after {
+  content: "°C";
+}
+.weather-temp {
+  display: block;
 }

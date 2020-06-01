@@ -36,6 +36,7 @@ app.use(require("./controllers/index_controller"));
 app.use(require("./controllers/guest_controller"));
 app.use(require("./controllers/table_controller"));
 app.use(require("./controllers/api-yelp"));
+app.use(require("./controllers/api-weather"));
 
 require("./controllers/guest_auth_controller")(app, passport);
 require("./controllers/admin_auth_controller")(app, passport);

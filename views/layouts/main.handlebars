@@ -23,6 +23,10 @@
         <li><a href="/tables">Restaurant</a></li>
         <li><a href="/yelp">Activities</a></li>
       </ul>
+      <div id="weather" data-description="">
+        <span class="weather-location">Sydney, Australia</span>
+        <span class="weather-temp"></span>
+      </div>
     </nav>
     <div id="main">
 		  {{{body}}}
@@ -32,10 +36,10 @@
     <div class="popup-box inactive template">
       <div class="container">
         <h2>Your Reservation has been confirmed.</h2>
-        <p>Your table # is {\{this.id}} <br />
-          Name: {\{this.name}} <br />
-          Number in Party: {\{this.num_party}} <br />
-          Reservation Time: {\{this.res_time}}</p>
+        <p>Your table # is {[this.id]} <br />
+          Name: {[this.name]} <br />
+          Number in Party: {[this.num_party]} <br />
+          Reservation Time: {[this.res_time]}</p>
         <span class="close"></span>
         <form action="/tables/{\{this.id}}?_method=DELETE" method="POST">
           <input class="danger" type="submit" value="Cancel Reservation">

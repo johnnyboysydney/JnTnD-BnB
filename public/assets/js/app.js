@@ -5,34 +5,26 @@ $(document).on('click', '.template > .container .close', function(e) {
 });
 
 
-function myFunction() {
-
+function onStart() {
 
   let tpl = $('body > .template');
 
   tpl.each(function(el) {
-    //const pattern = new RegExp('{{', 'g');
-    //$(this).html($(this).html().replace('/a/g', '{{'));
-
-
 
     let htm = $(this).html();
-    
+    htm = htm.replace(/{\[/g,'{{');
+    htm = htm.replace(/\]}/g,'}}');   
     $(this).html(htm);
+    
+  });
 
-
+  $.ajax({
+    url: '/api/weather',
+    method: "GET"
   })
-
-  /*
-
-
-  var x = document.body.innerHTML;  
-
-  const pattern = new RegExp("{/{", "gm");
-  x = x.replace(pattern, "{{");
-
-  document.body.innerHTML = x;
-*/
+  .then(function(resp) {
+    $('#weather .weather-temp').html(resp.temp);
+  });
 }
 
-myFunction();
+onStart();
