@@ -119,7 +119,7 @@ Yes, you can modify and refractor the code
 ## Acknowledgments
 
 - John "To my sons and daughters, who give me the power I need to keep going. To Agustin, mentor in my learnings."
-- Tushar ""
+- Tushar "To my family who support my passion for coding and are willing to sacrifice the things they love so I can pursue my passion"
 - Dani ""
 
 ### CopyRight
