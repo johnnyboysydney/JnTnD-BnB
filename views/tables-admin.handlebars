@@ -1,3 +1,4 @@
+{{>admin}}
 <form action="">
   <div id="search">
     <label>
@@ -11,7 +12,7 @@
 </form>
 
 <h2>All Tables</h2>
-<ul>
+<ul class="availability">
 {{#each tables}}
 <li>
   <a href="/admin/tables/id/{{this.dataValues.id}}">
@@ -24,3 +25,9 @@
   </a>
 {{/each}}
 </li>
+
+<ul class="legend">
+  <li><span class="room-available">Table Available</span></li>
+  <li><span class="room-reserved">Table Reserved</span></li>
+  <li><span class="room-occupied">Table Occupied</span></li>
+</ul>
