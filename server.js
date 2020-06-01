@@ -7,7 +7,7 @@ const session = require("express-session");
 
 // Sets up the Express App
 const app = express();
-const PORT = process.env.PORT || 9000;
+var PORT = process.env.PORT || 8080;
 
 // Models to sync
 const db = require("./models");

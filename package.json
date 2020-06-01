@@ -1,7 +1,7 @@
 {
   "name": "project-2",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Table of Content",
   "main": "server.js",
   "scripts": {
     "test": "mocha",
@@ -12,8 +12,8 @@
     "jest": "jest"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "John, Tushar, Danu",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.19.2",
     "bcrypt": "^4.0.1",
@@ -41,5 +41,16 @@
     "eslint-plugin-prettier": "^2.7.0",
     "mocha": "^5.2.0",
     "prettier": "^1.19.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnnyboysydney/JnTnD-BnB.git"
+  },
+  "bugs": {
+    "url": "https://github.com/johnnyboysydney/JnTnD-BnB/issues"
+  },
+  "homepage": "https://github.com/johnnyboysydney/JnTnD-BnB#readme"
 }
