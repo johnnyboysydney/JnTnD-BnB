@@ -30,9 +30,9 @@
         <input type="submit" value="Check In">
       </label>
       </form>
-      <form action="/admin/cancel/id/{{this.dataValues.id}}/?_method=PUT" method="POST">
+      <form action="/admin/delete/id/{{this.dataValues.id}}/?_method=PUT" method="POST">
       <label>
-        <input class="danger" type="submit" value="Cancel Reservation" disabled>
+        <input class="danger" type="submit" value="Cancel Reservation">
       </label>
       </form>
     {{/unless}}

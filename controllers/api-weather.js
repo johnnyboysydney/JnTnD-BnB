@@ -1,5 +1,6 @@
 // REQUIRED PACKAGES
 const axios = require("axios");
+const db = require("../models");
 var express = require("express");
 var router = express.Router();
 
@@ -36,8 +37,6 @@ router.get("/api/weather", (req, res) => {
 
   //res.json
 });
-
-
 
 // EXPORT FUNCTION
 module.exports = router;

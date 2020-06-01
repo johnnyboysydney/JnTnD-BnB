@@ -141,6 +141,32 @@ module.exports = function(app, passport) {
     });
   });
 
+  app.put("/admin/delete/id/:id", isLoggedIn, function(req, res) {
+    db.Guest.findOne({
+      where: {
+        room_number: req.params.id
+      }
+    }).then(function(result) {
+      db.Room.update({
+        available: true,
+        checkin: true,
+        GuestId: null
+      }, {
+        where: {
+          id: req.params.id
+        }
+      }).then(function(result2) {
+        db.Guest.destroy({
+          where: {
+            id: result.dataValues.id
+          }
+        }).then(function(result3) {
+          res.redirect("/admin/rooms/id/" + result.dataValues.room_number);
+        });
+      });
+    });
+  });
+
   //table view for manager
   app.get('/admin/tables', isLoggedIn, function(req, res) {
     db.Table.findAll({}).then(function(result) {

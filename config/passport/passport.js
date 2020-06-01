@@ -1,6 +1,6 @@
 var LocalStrategy = require("passport-local").Strategy;
 var bCrypt = require("bcrypt-nodejs");
-var db = require("../../models");
+const db = require("../../models");
 
 module.exports = function(passport) {
   const Guest = db.Guest;
@@ -40,14 +40,14 @@ module.exports = function(passport) {
     new LocalStrategy(
       {
         usernameField: "email",
-        passwordField: "lastName",
+        passwordField: "lastname",
         passReqToCallback: true
       },
-      (req, email, lastName, done) => {
+      (req, email, lastname, done) => {
         const data = {
           first_name: req.body.firstname,
-          last_name: lastName,
-          phone: req.body.phone,
+          last_name: lastname,
+          phone: req.body.contact,
           email: email,
           room_number: req.body.room,
           checkin: req.body.checkin,
@@ -60,7 +60,7 @@ module.exports = function(passport) {
           } else if (user) {
             db.Room.update(
               {
-                GuestId: user.dataValues.id,
+                GuestId: user.id,
                 available: false
               },
               {
@@ -83,10 +83,10 @@ module.exports = function(passport) {
     new LocalStrategy(
       {
         usernameField: "room",
-        passwordField: "lastName",
+        passwordField: "lastname",
         passReqToCallback: true
       },
-      (req, room, lastName, done) => {
+      (req, room, lastname, done) => {
         
         Guest.findOne({
           where: {
@@ -97,7 +97,7 @@ module.exports = function(passport) {
             if (!result) {
               return done(null, false, { message: "User was not found." });
             }
-            if (result.last_name.toLowerCase() !== lastName.toLowerCase()) {
+            if (result.last_name.toLowerCase() !== lastname.toLowerCase()) {
               return done(null, false, { message: "Incorrect password." });
             }
             return done(null, result);
@@ -139,7 +139,7 @@ module.exports = function(passport) {
             email: email,
             password: managerPassword,
             first_name: req.body.firstname,
-            last_name: req.body.lastName
+            last_name: req.body.lastname
           };
           Admin.create(data).then((newManager, created) => {
             if (!newManager) {
