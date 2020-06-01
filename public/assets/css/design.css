@@ -39,6 +39,11 @@ h1, h2 {
   color: var(--light);
 }
 
+h2 {
+  border-left: 5px solid var(--dark);
+  padding-left: 1em;
+}
+
 html {
   height: 100%;
 }

@@ -1,24 +1,24 @@
-<h1>Restaurant</h1>
+<h2>Restaurant</h2>
 <form action="/tables" method="post">
   <label>
-    <span>Name</span>
-    <input type="text" name="name" placeholder="Please enter your name" required="required" value="abcde">
+    <span>Contact Name</span>
+    <input type="text" name="name" placeholder="Contact Name" required="required" maxlength="255">
   </label>
   <label>
     <span>Contact Number</span>
-    <input type="text" name="phone" placeholder="Please enter your phone" required="required"  value="2131231">
+    <input type="tel" name="phone" placeholder="Contact Number" required="required"  maxlength="16">
   </label>
   <label>
-    <span>Email</span>
-    <input type="email" name="email" placeholder="Please enter your email"  required="required"  value="test@test.com">
+    <span>Email Address</span>
+    <input type="email" name="email" placeholder="Email Address"  required="required" maxlength="255">
   </label>
   <label>
-    <span>Time</span>
-    <input type="time" name="res_time" placeholder=""  required="required"  value="12:12:00">
+    <span>Reservation Time</span>
+    <input type="time" name="res_time" placeholder="07:00:01"  required="required" min="11:00:00" max="01:00:00" >
   </label>
   <label>
     <span>Number of People</span>
-    <input type="text" name="num_party" placeholder="How many people are in your party?"  required="required"  value="6">
+    <input type="text" name="num_party" placeholder="Number of people"  required="required"  value="6">
   </label>
   <label>
     <input type="submit" value="Make reservation">
@@ -55,6 +55,7 @@
         {
           if (d[1].type === 'text' 
           || d[1].type === 'email'
+          || d[1].type === 'tel'
           || d[1].type === 'time') {
                 
             return d;

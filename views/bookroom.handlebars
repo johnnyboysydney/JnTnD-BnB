@@ -13,27 +13,27 @@
   </label>
   <label>
     <span>First Name</span>
-    <input type="text" name="firstname" placeholder="First Name">
+    <input type="text" name="firstname" placeholder="First Name (Joe)" required="required" maxlength="255">
   </label>
   <label>
     <span>Last Name</span>
-    <input type="text" name="lastname" placeholder="Last Name">
+    <input type="text" name="lastname" placeholder="Last Name (Doe)" required="required" maxlength="255">
   </label>
   <label>
     <span>Contact Number</span>
-    <input type="number" name="contact" placeholder="Contact Number">
+    <input type="tel" name="contact" placeholder="Contact Number" required="required" maxlength="16">
   </label>
   <label>
     <span>Email</span>
-    <input type="text" name="email" placeholder="First Name">
+    <input type="email" name="email" placeholder="Email Address" required="required"  maxlength="255">
   </label>
   <label>
     <span>Check-in Date</span>
-    <input type="date" name="checkin">
+    <input type="date" name="checkin" required="required" min="2020-06-18" value="2020-06-18">
   </label>
   <label>
     <span>Check-out Date</span>
-    <input type="date" name="checkout">
+    <input type="date" name="checkout" required="required" min="2020-06-19" value="2020-06-19">
   </label>
   <label>
     <input type="submit" name="book" value="Book Now!">

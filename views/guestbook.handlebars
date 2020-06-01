@@ -2,11 +2,11 @@
 <form action="/guest/login" method="POST"  class="box-login">
   <label>
     <span>Room Number</span>
-    <input type="number" name="room" placeholder="Room Number">
+    <input type="number" name="room" placeholder="Room Number" required="required" min="1" max="50">
   </label>
   <label>
     <span>Last Name</span>
-    <input type="password" name="lastname">
+    <input type="password" name="lastname" required="required" placeholder="Last Name (Doe)">
   </label>
   <label>
     <input type="submit" value="Login">
