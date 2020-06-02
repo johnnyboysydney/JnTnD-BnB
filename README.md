@@ -41,7 +41,7 @@ To use this application locally:
 - Clone the GitHub repository at:
 - You will to install all the dependencies, see [Dependencies](#dependencies) for the complete list
 - Using ```npm install```, install all the dependencies
-- Using MySQL or MSSQL database, create the DB using the _schema.sql_ file, you can reciew the database schema on the [SQL schema](#schema) file
+- Using MySQL or MSSQL database, create the DB using the _schema.sql_ file, you can review the database schema on the [SQL schema](#schema) file
 - Using the _seeds.sql_ file to populate the DB
 - Once you have all the above created, you can edit the _server.js_ file where the password is and add your password to access your local DataBase.
 - You can then open a terminal or cmd prompt, and navigate to the folder where **_server.js_** is located and type: ``node server.js``
