@@ -10,18 +10,25 @@ module.exports = function(app, passport) {
   );
   
   app.get("/guest/login", (req, res) => {
-    res.render("guestbook");
+    res.render("guestbook", { isGuest: true });
   });
 
-  app.post(
-    "/guest/login",
-    passport.authenticate("guestlogin", {
-      successRedirect: "/guest",
-      failureRedirect: "/fail"
-    })
-  );
-  
+  app.post("/guest/login", function(req, res, next) {
+ 
+      passport.authenticate("guestlogin", function(err, user, info) {
+        if (err) { return next(err) }
+        if (!user) {
+          // *** Display message without using flash option
+          // re-render the login form with a message
+          return res.render('guestbook', { isGuest: true, message: info.message })
+        }
+        req.logIn(user, function(err) {
+          if (err) { return next(err); }
+          return res.redirect('/users/' + user.username);
+        });
+      })(req, res, next);
 
+    });
 
 
   app.get("/guest", isLoggedIn, (req, res) => {
@@ -33,7 +40,7 @@ module.exports = function(app, passport) {
     }).then(result => {
       res.render("guest", {
         guest: result,
-        guestsignout: true
+        isGuest: true
       });
     });
   });
@@ -66,7 +73,7 @@ module.exports = function(app, passport) {
         ).then(result => {
           db.Guest.destroy({
             where: {
-              id: result.user.id
+              id: req.user.id
             }
           }).then(() => {
             res.redirect("/");

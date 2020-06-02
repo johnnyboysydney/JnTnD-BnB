@@ -409,45 +409,6 @@ body {
 }
 
 
-
-@media (max-width: 760px) {
-
-  nav {
-    border-bottom: 5px solid var(--dark);
-  }
-
-  nav h1 {
-    margin: 10px ;
-  }
-
-  nav ul {
-    flex-direction: column;
-  }
-
-  nav Ul {
-    display: none;
-  }
-  nav li {
-    border-bottom: 1px solid var(--light);
-  }
-  #main {
-    width: 100%;;
-  }
-  
-  #landing a {
-    background: linear-gradient(120deg, var(--submit-button), #91919166);
-    display: block;
-    border-radius: 0.3em;
-    color: #fff;
-    font-size: 1.2em;
-    padding: 1em 0;
-    margin: 0;
-    border: 1px solid var(--light);
-    width: 45%;
-    text-align: center;
-  }
-}
-
 .template {
 
 }
@@ -541,5 +502,151 @@ body {
 
 .legend li {
   margin: 0;
-  padding; 0;
+  padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 760px) {
+
+  
+
+  nav {
+    
+  }
+
+  nav h1 {
+    margin: 10px ;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul {
+    border-bottom: 5px solid var(--dark);
+    height: 0;
+    overflow: hidden;
+    
+  }
+  nav li {
+    border-bottom: 1px solid var(--light);
+  }
+
+  nav .menu {
+    border: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  nav .menu {
+    display: block;
+    outline: none !important;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 2em;
+  }
+
+
+  nav .menu.menu-show { display: inline-block; }
+  nav .menu.menu-hide { display: none; }
+
+  nav .menu.menu-show:after { content: "\2630"; }
+  nav .menu.menu-hide:after { 
+    content: "\02DF"; 
+    line-height: 90px;
+    font-size: 2em;
+  }
+
+  nav .menu.menu-show:focus {
+    position: fixed;
+    right: -60px;
+  }
+  nav .menu.menu-show:focus + .menu-hide {
+    display: inline-block;    
+  }
+
+  nav .menu.menu-show:focus ~ ul {
+    height: auto;
+    
+  }
+
+  nav .menu.menu-show:focus ~ ul {
+    border-bottom-width: 0;
+  }
+
+  nav .menu.menu-show:focus ~ ul li {
+    
+  }
+
+
+  /*
+  nav .menu:after {
+    content: "\2630";
+  }
+
+  nav .menu:focus ~ ul {
+    height: 100px;
+  }
+
+  nav .menu:focus:after {
+    content: "\02DF";
+  }
+  */
+
+  /*
+  nav .menu:not(:focus):after {
+    content: "\2630";
+  }
+  nav .menu:not(:focus) {
+
+  }
+  nav .menu:after:focus {
+    content: "\02DF";
+  }
+
+  nav .menu:focus li {
+    height: 100px;
+  }
+  */
+/*
+  nav .menu li {
+    display: none;
+  }
+*/
+  #main {
+    width: 100%;;
+  }
+
+  #weather {
+    display: none;
+  }
+  
+  #landing {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #landing a {
+    margin: 0 0 1em;
+    padding: 1em;
+    width: 100%;
+  }
+
+
 }

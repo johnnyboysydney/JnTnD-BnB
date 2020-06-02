@@ -6,12 +6,12 @@ var yelp = require("yelp-fusion");
 
 // YELP FUSION API CALL
 router.get("/yelp", (req, res) => {
-  console.log("YELP API GIT ROUTE SUCCESS");
-  res.render("yelpsearch");
+
+  res.render("yelpsearch", { isGuest: true });
 });
 
 router.post("/api/yelp", (req, res) => {
-  console.log("API POST ROUTE ACTIVE");
+
 
   // USER SEARCH TERMS
   const searchRequest = {
@@ -43,7 +43,7 @@ router.post("/api/yelp", (req, res) => {
       }
 
       // Render Yelp Results
-      return res.render("yelpsearch", { business: results });
+      return res.render("yelpsearch", { business: results, isGuest: true });
     } // close client search .then func
   );
 });

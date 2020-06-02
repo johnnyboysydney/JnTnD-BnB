@@ -16,8 +16,11 @@
   <div class="container main">
     <nav>
       <h1>JnTnD Hotels</h1>
+      
+      <span class="menu menu-show" tabindex="-1"></span>
+      <span class="menu menu-hide" tabindex="-1"></span>
+      
       <ul role="navigation">
-        {{test}}
         {{>nav}}
         {{#if guestsignout}}
         <li><a href="/guest/logout">Sign Out</a></li>
@@ -29,7 +32,9 @@
       </div>
     </nav>
     <div id="main">
+      {{#if isGuest}}
       {{>guestnav}}
+      {{/if}}
 		  {{{body}}}
     </div>
   </div>

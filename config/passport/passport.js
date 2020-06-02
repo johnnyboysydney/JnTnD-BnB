@@ -61,9 +61,10 @@ module.exports = function(passport) {
           .then((user, created) => {
           
             if (!user) {
-              return done(null, false);
+            
+              return done(null, false, { message: "Incorrect password." });
             } else if (user) {
-              return done(null, user);
+              return done(null, user);  
             }
 
           });

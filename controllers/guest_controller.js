@@ -5,7 +5,7 @@ const db = require("../models");
 
 router.get("/room/book", (req, res) => {
   db.Room.findAll({}).then(result => {
-    res.render("bookroom", { rooms: result });
+    res.render("bookroom", { rooms: result, isGuest: true });
   });
 });
 

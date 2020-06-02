@@ -5,8 +5,10 @@ const db = require("../models");
 //get all the reservations
 router.get("/tables", (req, res) => {
   db.Table.findAll({}).then(data => {
-    const hbsObject = { tables: data };
-    res.render("tables", hbsObject);
+    res.render("tables",  { 
+      tables: data, 
+      isGuest: true
+    });
   });
 });
 

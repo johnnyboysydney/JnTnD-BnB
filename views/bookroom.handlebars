@@ -2,8 +2,8 @@
 <form action="/room/book" method="POST">
   <label>
     <span>Room Number:</span>
-    <select name="room" required>
-      <option value="">Choose a room</option>
+    <select name="room" required="required" size="1">
+      <option value="" >-- Choose a room --</option>
       {{#each rooms}}
         {{#if this.dataValues.available}}
           <option value="{{this.dataValues.id}}">{{this.dataValues.id}}</option>

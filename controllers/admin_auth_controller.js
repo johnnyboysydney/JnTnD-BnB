@@ -10,7 +10,7 @@ module.exports = function(app, passport) {
 
   app.get('/admin/login', function(req, res) {
     // render the page and pass in any flash data if it exists
-    res.render('loginadmin'); 
+    res.render('loginadmin', { isAdmin: true}); 
   });
 
   // process the login form
@@ -22,7 +22,7 @@ module.exports = function(app, passport) {
   );
   // SIGNUP 
   app.get('/admin/signup', function(req, res) {
-    res.render('adminsignup');
+    res.render('adminsignup', { isAdmin: true});
   });
 
   // process the signup form
@@ -33,13 +33,13 @@ module.exports = function(app, passport) {
   }));
 
   app.get('/admin/menu', isLoggedIn, function(req, res) {
-    res.render('manager');
+    res.render('manager', { isAdmin: true});
   });
 
   app.get('/admin/guests', isLoggedIn, function(req, res) {
 
     db.Guest.findAll().then(function(result) {
-      res.render('guests', { guests: result });
+      res.render('guests', { guests: result, isAdmin: true});
     });
     
   });
@@ -49,7 +49,8 @@ module.exports = function(app, passport) {
   app.get('/admin/rooms', isLoggedIn, function(req, res) {
     db.Room.findAll().then(function(result) {
       res.render("rooms", {
-        rooms: result
+        rooms: result,
+        isAdmin: true
       });
     });
   });
@@ -73,7 +74,8 @@ module.exports = function(app, passport) {
     }).then(function(result) {
       console.table(result);
       res.render("room", {
-        rooms: result
+        rooms: result,
+        isAdmin: true
       });
     });
   });
@@ -85,7 +87,7 @@ module.exports = function(app, passport) {
       }
     }).then(function(result) {
       
-      res.render("book-id", {rooms: result});
+      res.render("book-id", {rooms: result, isAdmin: true });
     });
   });
 
@@ -179,7 +181,8 @@ module.exports = function(app, passport) {
   app.get('/admin/tables', isLoggedIn, function(req, res) {
     db.Table.findAll({}).then(function(result) {
       res.render("tables-admin", {
-        tables: result
+        tables: result,
+        isAdmin: true
       });
     });
   });
@@ -187,7 +190,9 @@ module.exports = function(app, passport) {
   app.post('/admin/tables-admin', isLoggedIn, function(req, res) {
     db.Table.findAll({
       where: {
-        name: req.body.name
+        name: {
+          [Op.like]: req.body.name + '%'
+        }
       }
     }).then(function(result) {
       res.json(result);
@@ -201,7 +206,8 @@ module.exports = function(app, passport) {
       },
     }).then(function(result) {
       res.render("table", {
-        tables: result
+        tables: result,
+        isAdmin: true
       });
     });
   });
