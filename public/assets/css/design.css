@@ -524,7 +524,9 @@ body {
   
 
   nav {
-    
+    border-bottom: 5px solid var(--dark);
+    position: relative;
+    z-index: 10;
   }
 
   nav h1 {
@@ -536,13 +538,22 @@ body {
   }
 
   nav ul {
-    border-bottom: 5px solid var(--dark);
+    border-top: 5px solid #fff;
+    border-top-width: 0;
     height: 0;
-    overflow: hidden;
+    margin-bottom: 0;
+    max-height: 0;
+    opacity: 0;
     
+    transition: max-height 0.3s ease-in, opacity 0.3s ease-in, margin-bottom 0.3s ease-in, border-top-width 0.3s ease-in;
   }
   nav li {
     border-bottom: 1px solid var(--light);
+    opacity: 0;
+  }
+
+  nav ul li:first-child {
+    flex-grow: 0;
   }
 
   nav .menu {
@@ -582,55 +593,25 @@ body {
   }
 
   nav .menu.menu-show:focus ~ ul {
+    border-top-width: 5px;
+    margin-bottom: -5px;
     height: auto;
-    
-  }
-
-  nav .menu.menu-show:focus ~ ul {
-    border-bottom-width: 0;
+    max-height: 1000px;
+    opacity: 1;
   }
 
   nav .menu.menu-show:focus ~ ul li {
-    
+    opacity: 1;
   }
 
-
-  /*
-  nav .menu:after {
-    content: "\2630";
+  nav ul li a, nav ul li a:link, nav ul li a:hover, nav ul li a:active, nav ul li  a:focus {
+    display: block;
+    padding: 1em;
   }
 
-  nav .menu:focus ~ ul {
-    height: 100px;
-  }
-
-  nav .menu:focus:after {
-    content: "\02DF";
-  }
-  */
-
-  /*
-  nav .menu:not(:focus):after {
-    content: "\2630";
-  }
-  nav .menu:not(:focus) {
-
-  }
-  nav .menu:after:focus {
-    content: "\02DF";
-  }
-
-  nav .menu:focus li {
-    height: 100px;
-  }
-  */
-/*
-  nav .menu li {
-    display: none;
-  }
-*/
   #main {
-    width: 100%;;
+    width: 100%;
+    z-index: 5;
   }
 
   #weather {
