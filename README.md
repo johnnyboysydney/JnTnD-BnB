@@ -55,6 +55,7 @@ Section under construction
 ### Dependencies
 
 Production:
+- axios
 - bycrypt
 - bycrypt-node.js
 - bycryptjs
