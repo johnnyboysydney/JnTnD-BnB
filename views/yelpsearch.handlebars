@@ -8,8 +8,8 @@
 			<input type="submit" value="search">
 		</form>
 
+{{#if business}}
 <h2>Results</h2>
-
 <ul class="results">
 {{#each business}}
 	<li>
@@ -21,3 +21,4 @@
 	</li>
 {{/each}}
 </ul>
+{{/if}}
