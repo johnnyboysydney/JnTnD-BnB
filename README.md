@@ -1,4 +1,19 @@
 # JnTnD-BnB [![Build Status](https://travis-ci.com/johnnyboysydney/Project-2.svg?token=h3vXPXspd1GX9AoW4AXc&branch=master)](https://travis-ci.com/johnnyboysydney/Project-2)
+[contributors-shield]: https://img.shields.io/github/contributors/johnnyboysydney/JnTnD-BnB.svg?style=flat-square
+[contributors-url]: https://github.com/johnnyboysydney/JnTnD-BnB/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/johnnyboysydney/JnTnD-BnB.svg?style=flat-square
+[forks-url]: https://github.com/johnnyboysydney/JnTnD-BnB/network
+[stars-shield]: https://img.shields.io/github/stars/johnnyboysydney/JnTnD-BnB.svg?style=flat-square
+[stars-url]: https://github.com/Zypherone/note-taker/stargazers
+[issues-shield]: https://img.shields.io/github/issues/johnnyboysydney/JnTnD-BnB.svg?style=flat-square
+[issues-url]: https://github.com/johnnyboysydney/JnTnD-BnB/issues
+[build-style-shield]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat
+[build-style-url]: https://github.com/feross/standard
+[license-shield]: https://img.shields.io/github/license/johnnyboysydney/JnTnD-BnB.svg?style=flat-square
+[license-url]: http://choosealicense.com/licenses/mit/
+[![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url] [![JS Standard][build-style-shield]][build-style-url] [![MIT License][license-shield]][license-url]
+
+
 
 ## Table of Content
 
