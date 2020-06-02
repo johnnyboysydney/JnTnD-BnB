@@ -59,10 +59,12 @@ module.exports = function(passport) {
             }
           })
           .then((user, created) => {
+
+            console.log(room, lastname);
           
             if (!user) {
             
-              return done(null, false, { message: "Incorrect password." });
+              return done(null, false, { message: "Room and/or Last name is incorrect." });
             } else if (user) {
               return done(null, user);  
             }

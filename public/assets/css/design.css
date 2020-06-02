@@ -512,8 +512,20 @@ body {
 
 
 
+/*
 
 
+  Status/Boxes etc
+
+
+*/
+
+.message-log {
+  background: #ff88dd;
+  font-weight: bold;
+  padding: 1em;
+  width: 100%;
+}
 
 
 

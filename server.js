@@ -33,7 +33,6 @@ app.use(express.static("public"));
 
 // Load routes
 app.use(require("./controllers/index_controller"));
-app.use(require("./controllers/guest_controller"));
 app.use(require("./controllers/table_controller"));
 app.use(require("./controllers/api-yelp"));
 app.use(require("./controllers/api-weather"));

@@ -8,6 +8,12 @@ module.exports = function(app, passport) {
       failureRedirect: "/"
     })
   );
+
+  app.get("/room/book", (req, res) => {
+    db.Room.findAll({}).then(result => {
+      res.render("guest-room-book", { rooms: result, isGuest: true });
+    });
+  });
   
   app.get("/guest/login", (req, res) => {
     res.render("guestbook", { isGuest: true });
@@ -24,7 +30,7 @@ module.exports = function(app, passport) {
         }
         req.logIn(user, function(err) {
           if (err) { return next(err); }
-          return res.redirect('/users/' + user.username);
+          return res.redirect('/guest');
         });
       })(req, res, next);
 
@@ -40,7 +46,8 @@ module.exports = function(app, passport) {
     }).then(result => {
       res.render("guest", {
         guest: result,
-        isGuest: true
+        isGuest: true,
+        isGuestLoggedIn: true
       });
     });
   });

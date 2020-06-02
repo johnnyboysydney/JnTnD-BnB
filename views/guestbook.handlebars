@@ -1,6 +1,8 @@
 <h2>Guest login</h2>
 <form action="/guest/login" method="POST"  class="box-login">
-  {{message}}
+  {{#if message}}
+  <div class="message-log">{{message}}</div>
+  {{/if}}
   <label>
     <span>Room Number</span>
     <input type="number" name="room" placeholder="Room Number" required="required" min="1" max="50">
