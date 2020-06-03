@@ -555,9 +555,9 @@ body {
     height: 0;
     margin-bottom: 0;
     max-height: 0;
-    opacity: 0;
-    
-    transition: max-height 0.3s ease-in, opacity 0.3s ease-in, margin-bottom 0.3s ease-in, border-top-width 0.3s ease-in;
+    /* opacity: 0; */
+    /* vvisibility: hidden; */
+    transition: max-height 0.2s ease, opacity 0.2s ease, margin-bottom 0.2s ease, border-top-width 0.2s ease;
   }
   nav li {
     border-bottom: 1px solid var(--light);
@@ -609,7 +609,9 @@ body {
     margin-bottom: -5px;
     height: auto;
     max-height: 1000px;
-    opacity: 1;
+    /* opacity: 1;*/
+    /* visibility: visible; */
+    position: static;
   }
 
   nav .menu.menu-show:focus ~ ul li {
@@ -619,6 +621,7 @@ body {
   nav ul li a, nav ul li a:link, nav ul li a:hover, nav ul li a:active, nav ul li  a:focus {
     display: block;
     padding: 1em;
+    width: 100%;
   }
 
   #main {
