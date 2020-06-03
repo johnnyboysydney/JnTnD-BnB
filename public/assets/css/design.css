@@ -645,4 +645,16 @@ body {
   }
 
 
+  /*
+   * Login Box
+   */
+
+  form.box-login label {
+    width: 100%;
+  }   
+
+  form.box-login label span {
+    display: none;
+  }
+
 }
