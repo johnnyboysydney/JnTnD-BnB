@@ -69,6 +69,9 @@ module.exports = function(app, passport, db) {
       where: {
         first_name: {
           [db.Op.like]: req.body.search + '%'
+        },
+        last_name: {
+          [db.Op.like]: req.body.search + '%'
         } 
       }
     }).then(function(result) {
