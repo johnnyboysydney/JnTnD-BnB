@@ -1,5 +1,5 @@
 <h2>Restaurant</h2>
-<form action="/tables" method="post">
+<form action="/tables" method="post" data-cancel="true">
   <label>
     <span>Contact Name</span>
     <input type="text" name="name" placeholder="Contact Name" required="required" maxlength="255">
@@ -14,7 +14,7 @@
   </label>
   <label>
     <span>Reservation Time</span>
-    <input type="time" name="res_time" placeholder="07:00:01"  required="required" min="11:00:00" max="01:00:00" >
+    <input type="time" name="res_time" placeholder="07:00:01"  required="required" min="11:00:00" max="01:00:00" value="{{TIME_NOW}}" >
   </label>
   <label>
     <span>Number of People</span>
@@ -78,7 +78,7 @@
       
       let templateData = data.data;
 
-      let html = $('.template.reservation').html();
+      let html = $('.template.reservation.alt').html();
       let template = Handlebars.compile(html);
       let compliedHtml = template(templateData);
       let popBox = $(compliedHtml);

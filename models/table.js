@@ -31,13 +31,22 @@ module.exports = function(sequelize, DataTypes) {
     
   });
 
+  /*
   Table.associate = function(models) {
     Table.belongsTo(models.Guest, {
       onDelete: "cascade"
     });
   
   };
+*/
 
+  Table.associate = function(models) {
+    Table.belongsTo(models.Guest, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  }
 
   return Table;
 };

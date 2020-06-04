@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     room_number: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     checkin: {
       type: DataTypes.DATEONLY
@@ -50,6 +50,17 @@ module.exports = function(sequelize, DataTypes) {
   Guest.associate = function(models) {
     Guest.hasOne(models.Room);
     Guest.hasOne(models.Table);
+/*
+    Guest.hasMany(models.Res, {
+      foreignKey: 'resId',
+      as: 'res',
+      onDelete: 'CASCADE',
+      constraints: false, 
+      allowNull: true, 
+      defaultValue: null
+    });
+
+*/  
   }
 
   return Guest;

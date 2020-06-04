@@ -1,6 +1,25 @@
-<section id="landing">
-  <a href="/"><img src="/assets/img/logo.png" /></a>
-  <a href="/room/book">Book a Room</a>
-  <a href="/tables">Book a Table</a>
-  <a href="/yelp">Find an Activity</a>
-</section>
+<div class="nav nav-guest">
+  <ul>
+    {{>guestlinks}}
+  </ul>
+</div>
+
+
+<div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            {{>guestlinks}}
+          </ul>
+        </div>      
+      </div>
+    </div>
+    <div class="cp">
+      <ul>
+        {{>nav}}
+      </ul>
+    </div>
+  </div>

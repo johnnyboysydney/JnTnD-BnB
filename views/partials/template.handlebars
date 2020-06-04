@@ -1,0 +1,46 @@
+<div class="template reservation">
+  <div class="popup-box inactive template">
+    <div class="container">
+      <h2>Your Reservation has been confirmed.</h2>
+      <p>Your table #{[this.res.id]} <br />
+        Name: {[this.guest.first_name]} {[this.guest.last_name]} <br />
+        Number in Party: {[this.res.party_size]} <br />
+        Reservation Time: {[this.res.res_time]}</p>
+      <span class="close"></span>
+      <form action="/table/cancel" method="POST" data-action="json" data-template="reservation-cancel">
+        <input type="hidden" name="id" value="{[this.res.id]}" />
+        <input class="danger" type="submit" value="Cancel Reservation">
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="template reservation-cancel">
+  <div class="popup-box inactive template">
+    <div class="container">
+      <h2>Your reservation has now been cancelled!</h2>
+      <p>Canceled Details: <br />
+        Reservation #{[this.id]} <br />
+        Name: {[this.guest.first_name]} {[this.guest.last_name]} <br />
+        Number in Party: {[this.party_size]} <br />
+        Reservation Time: {[this.res_time]}</p>
+      <span class="close"></span>
+    </div>
+  </div>
+</div>
+
+<div class="template reservation alt">
+  <div class="popup-box inactive template">
+    <div class="container">
+      <h2>Your Reservation has been confirmed.</h2>
+      <p>Your table # is {[this.id]} <br />
+        Name: {[this.name]} <br />
+        Number in Party: {[this.num_party]} <br />
+        Reservation Time: {[this.res_time]}</p>
+      <span class="close"></span>
+      <form action="/tables/{[this.id]}?_method=DELETE" method="POST">
+        <input class="danger" type="submit" value="Cancel Reservation">
+      </form>
+    </div>
+  </div>
+</div>

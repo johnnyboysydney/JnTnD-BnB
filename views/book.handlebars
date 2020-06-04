@@ -1,0 +1,50 @@
+<h2>Restaurant</h2>
+<form action="/table/book" method="POST" data-action="json" data-template="reservation">
+  <label>
+    <span>First Name</span>
+    <input type="text" name="first_name" placeholder="First Name (Joe)" required="required" maxlength="255">
+  </label>
+  <label>
+    <span>Last Name</span>
+    <input type="text" name="last_name" placeholder="Last Name (Doe)" required="required" maxlength="255">
+  </label>
+  <label>
+    <span>Contact Number</span>
+    <input type="tel" name="phone" placeholder="Contact Number" required="required" maxlength="16">
+  </label>
+  <label>
+    <span>Email</span>
+    <input type="email" name="email" placeholder="Email Address" required="required"  maxlength="255">
+  </label>
+  <hr />
+  <label>
+    <span>Reservation Time</span>
+    <input type="time" name="res_time" placeholder="07:00:01"  required="required" min="11:00:00" max="01:00:00" value="11:00:00" >
+  </label>
+  <label>
+    <span>Party Size</span>
+    <input type="text" name="party_size" placeholder="Party Size"  required="required"  value="6">
+  </label>
+  <label>
+    <input type="submit" value="Make reservation">
+  </label>
+</form>
+
+<!--
+{{#each tables}}
+  {{#if this.dataValues.available}}
+  <li class="list-group-item">
+    <div class="input-group">
+      <p class="lead">Your Reservation has been confirmed. <br>
+      Your table # is {{this.dataValues.id}} <br>
+      Name: {{this.dataValues.name}} <br>
+      Number in Party: {{this.dataValues.num_party}} <br>
+      Reservation Time: {{this.dataValues.res_time}}</p>
+      <form action="/tables/{{this.dataValues.id}}?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-big btn-secondary btn-lg" id="trash">Cancel Resv<span class="  glyphicon glyphicon-trash"></span></button>
+    </form>
+    </div>
+  </li>
+  {{/if}}
+{{/each}}
+-->

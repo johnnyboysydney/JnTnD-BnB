@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "root",
-    "database": "hotel_db",
-    "host": "127.0.0.1",
+    "username": "ojqy8bwxjfhvn7nc",
+    "password": "y89d5h1beayjfhcu",
+    "database": "brkuipkggihpum8u",
+    "host": "o61qijqeuqnj9chh.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {

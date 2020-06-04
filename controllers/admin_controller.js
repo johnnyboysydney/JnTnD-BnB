@@ -33,7 +33,7 @@ module.exports = function(app, passport) {
   }));
 
   app.get('/admin/menu', isLoggedIn, function(req, res) {
-    res.render('manager', { isAdmin: true});
+    res.render('manager', { isAdmin: true, tpl: 'view-admin-home'});
   });
 
   app.get('/admin/guests', isLoggedIn, function(req, res) {

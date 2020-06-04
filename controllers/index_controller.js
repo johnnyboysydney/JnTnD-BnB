@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require("../models");
 
 router.get("/", (req, res) => {
-  res.render("index", { isGuest: true });
+  res.render("index", { isGuest: true, tpl: 'view-home' });
 });
 
 router.get("/admin/login", (req, res) => {
