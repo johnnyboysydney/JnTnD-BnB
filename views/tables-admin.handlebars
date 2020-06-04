@@ -1,4 +1,5 @@
 {{>admin}}
+<!--
 <form action="admin/table-admin" method="GET">
   <div id="search">
     <label>
@@ -10,21 +11,28 @@
     </label>
   </div>
 </form>
-
-<h2>All Tables</h2>
-<ul class="availability">
-{{#each tables}}
-<li>
-  <a href="/admin/tables/id/{{this.dataValues.id}}">
-    {{#if this.dataValues.available}}
-      <span class="room-reserved">{{this.dataValues.id}}</span>
-    {{/if}}
-    {{#unless this.dataValues.available}}
-      <span class="room-available">{{this.dataValues.id}}</span>
-    {{/unless}}
-  </a>
-{{/each}}
-</li>
+-->
+<h2>All Table Reservations</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <td>Res #</td>
+        <td>Customer Details</td>
+        <td>View</td>
+      </tr>
+    </thea>
+    <tbody>
+      {{#each tables}}
+      <tr>
+        <td style="width: 80px;">{{this.dataValues.id}}</td>
+        <td>{{this.dataValues.name}}</td>
+        <td  style="width: 80px;"><a href="/admin/tables/id/{{this.dataValues.id}}">View</a></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
 
 <ul class="legend">
   <li><span class="room-available">Table Available</span></li>

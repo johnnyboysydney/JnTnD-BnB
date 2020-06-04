@@ -1,8 +1,8 @@
-<form action="/admin/book/id/:id" method="POST">
-  {{#each rooms}}
+{{#each rooms}}
     <h2>Booking Room Number #{{this.dataValues.id}}</h2>
     <input type="hidden" name="room" value="{{this.dataValues.id}}">
   {{/each}}
+<form action="/admin/book/id/:id" method="POST">
   <label>
     <span>First Name</span>
     <input type="text" name="firstname" placeholder="First Name"  required="required">
