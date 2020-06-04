@@ -1,0 +1,42 @@
+{{>admin}}
+<h2>All Rooms</h2>
+
+<table>
+  <thead>
+    <tr>
+      <td>Room Number</td>
+      <td>Status</td>
+      <td>Customer Details</td>
+      <td>View</td>
+    </tr>
+  </thea>
+  <tbody>
+    {{#each rooms}}
+    <tr>
+      <td>{{this.dataValues.id}}</td>
+      <td>
+        {{#if this.dataValues.available}}
+          Vacant
+        {{/if}}
+        {{#unless this.dataValues.available}}
+          {{#unless this.dataValues.checkin}}
+            Reserved
+          {{/unless}}
+          {{#if this.dataValues.checkin}}
+            Occupied 
+          {{/if}}
+        {{/unless}}
+      </td>
+      <td>{{this.dataValues.Guest.first_name}}</td>
+      <td><a href="/admin/rooms/id/{{this.dataValues.id}}">View Room</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
+<ul class="legend">
+  <li><span class="room-available">Room Available</span></li>
+  <li><span class="room-reserved">Room Reserved</span></li>
+  <li><span class="room-occupied">Room Occupied</span></li>
+</ul>

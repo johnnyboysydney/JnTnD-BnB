@@ -1,15 +1,16 @@
 {{#each tables}}
-  <h2>Table #{{this.dataValues.id}}</h2>
-
-  {{#if this.dataValues.available}}
-   
-  <h3>Current Table Information:</h3>
-  <p><strong>Name:</strong> {{this.dataValues.name}}</p>
-  <p><strong>Phone:</strong> {{this.dataValues.phone}}</p>
-  <p><strong>Email:</strong> {{this.dataValues.email}}</p>
-  <p><strong>Party Size:</strong> {{this.dataValues.num_party}}</p>
-  <p><strong>Reservation Time:</strong> {{this.dataValues.res_time}}</p>
-
-  {{/if}}
+<h2>Current Table Information:</h2>
+{{#if this.dataValues.available}}
+<div class="info">
+  <h3>Table #{{this.dataValues.id}}</h3>
+  <ul>
+    <li><strong>Name:</strong> {{this.dataValues.name}}</li>
+    <li><strong>Phone:</strong> {{this.dataValues.phone}}</li>
+    <li><strong>Email:</strong> {{this.dataValues.email}}</li>
+    <li><strong>Party Size:</strong> {{this.dataValues.num_party}}</li>
+    <li><strong>Reservation Time:</strong> {{this.dataValues.res_time}}</li>
+  </ul>
+  <a class="nav-back" href="/admin/tables">Go Back</a>
+</div>
+{{/if}}
 {{/each}}
-<a href="/admin/tables">Go Back</a>

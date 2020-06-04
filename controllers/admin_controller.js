@@ -1,6 +1,4 @@
-const db = require("../models");
-
-module.exports = function(app, passport) {
+module.exports = function(app, passport, db) {
   // HOME PAGE
   app.get("/admin", function(req, res) {
     res.redirect('/admin/login'); 
@@ -65,11 +63,26 @@ module.exports = function(app, passport) {
     
   });
 
+  app.post('/admin/guests', isLoggedIn, function(req, res) {
+
+    db.Guest.findAll({
+      where: {
+        first_name: {
+          [db.Op.like]: req.body.search + '%'
+        } 
+      }
+    }).then(function(result) {
+      res.render('guests', { guests: result, isAdmin: true});
+    });
+    
+  });
+
   // we will want this protected so you have to be logged in to visit
   // we will use route middleware to verify this (the isLoggedIn function)
   app.get('/admin/rooms', isLoggedIn, function(req, res) {
-    db.Room.findAll().then(function(result) {
-      res.render("rooms", {
+    db.Room.findAll({include: [db.Guest]}).then(function(result) {
+      
+      res.render("admin-rooms", {
         rooms: result,
         isAdmin: true
       });
@@ -93,7 +106,7 @@ module.exports = function(app, passport) {
       },
       include: [db.Guest]
     }).then(function(result) {
-      console.table(result);
+      
       res.render("room", {
         rooms: result,
         isAdmin: true

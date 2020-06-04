@@ -1,0 +1,39 @@
+.info {
+  background: rgba(255, 255, 255, .9);
+  padding: 1em;
+  position: relative;
+}
+
+.info > h3,
+.info > h4,
+.info > ul {
+  margin: 1em;
+}
+
+.info > h3 {
+  font-size: 1em;
+  font-weight: bold;;
+}
+
+/* Status Info */
+.info > h4 {
+  font-size: 1em;
+  margin: 2em;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.info li {
+  margin: 0 0 .5em;
+}
+
+.info strong {
+ font-weight: bold;
+ display: inline-block;
+ min-width: 30%;
+}
+.info form {
+  background: transparent;
+  padding: 0;
+}

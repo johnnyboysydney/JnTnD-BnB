@@ -1,7 +1,7 @@
 module.exports = function(app, passport, db) {
    
   app.get("/guest/login", (req, res) => {
-    res.render("guestbook", { isGuest: true });
+    res.render("guest-login", { isGuest: true });
   });
 
   app.post("/guest/login", function(req, res, next) {
@@ -11,7 +11,7 @@ module.exports = function(app, passport, db) {
       if (!user) {
         // *** Display message without using flash option
         // re-render the login form with a message
-        return res.render('guestbook', { isGuest: true, message: info.message })
+        return res.render('guest-login', { isGuest: true, message: info.message })
       }
       req.logIn(user, function(err) {
         if (err) { return next(err); }

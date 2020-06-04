@@ -1,17 +1,17 @@
 {{>admin}}
 
-<form method="POST">
-  <label>
-    <span>Search for guest:</span>
-    <input type="text" name="search">
-  </label>
-  <label>
-    <input type="submit" value="Search">
-  </label>
-</form>
-
 <h2>All Guests</h2>
 
+<form method="POST" class="yelpy">
+  
+  <input type="text" name="search" placeholder="Search by first or last name">
+  <input type="submit" value="Search">
+
+</form>
+
+<h2>Results</h2>
+
+{{#if guests}}
 {{#each guests}}
 <ul class="results">
   <li>
@@ -22,5 +22,8 @@
     <strong>Phone:</strong> {{this.dataValues.phone}} <br />
     <strong>Email:</strong> {{this.dataValues.email}} <br />
   </li>
-{{/each}}
 </ul>
+{{/each}}
+{{else}}
+<p class="room-occupied">No results matching your request...</p>
+{{/if}}

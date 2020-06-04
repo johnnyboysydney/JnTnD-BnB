@@ -17,6 +17,10 @@
   --primary-color: ##333;
   --overlay-color: rgba(24, 39, 51 , 0.85);
   --menu-speed: 0.75s;
+
+  --green-text: #155724;
+  --blue-text: #004085;
+  --red-text: #721c24;
 }
 
 html,
@@ -46,8 +50,13 @@ h1, h2 {
 
 h2 {
   border-left: 5px solid var(--dark);
+  color: #fff;
   font-size: 1.5em;
   padding-left: 1em;
+}
+
+.template h2 {
+  color: var(--light);
 }
 
 html {
@@ -205,12 +214,12 @@ form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  background: rgba(255,255,255,.7);
+  background: rgba(255,255,255,.9);
   padding: 1em;
 }
 
 .box-login {
-  background: rgba(255,255,255,.7);
+  background: rgba(255,255,255,.9);
   position: relative;
   
 }
@@ -239,7 +248,7 @@ form label:first-child {
 label span,
 label input,
 label input[type="text"],
-label input[type="phone"],
+label input[type="tel"],
 label input[type="email"],
 label input[type="number"],
 label input[type="date"],
@@ -335,28 +344,75 @@ form label:last-child {
   border-color: #f5c6cb;
 }
 
+.stock-available {
+  color: var(--green-text);
+  font-weight: bold;
+}
 
-.availability {
+.stock-occupied {
+  color: var(--red-text);
+  font-weight: bold;
+}
+.stock-reserved {
+  color: var(--blue-text);
+  font-weight: bold;
+}
+
+p.room-occupied {
+  margin: 0;
+}
+
+.message-log {
+  width: 100%;
+}
+
+
+ul.availability {
   display: flex;
   flex-wrap: wrap;
+  flex: 1 1 0;
   justify-content: center;
   margin: 0;
   padding: 0;
 }
 
-.availability li {
-  display: flex;
-  flex-grow: 2;
+ul.availability li {
   margin-bottom: 10px;
-  width: 10%;
+  width: 100%;
 }
 
-.availability li a {
+ul.availability li a {
   height: 100%;
   width: 100%;
-  flex-grow: 2;
 }
 
+table {
+  background: rgb(255,255,255,0.9);
+  margin: 1em;
+  width: 100%;
+}
+
+thead {
+  background: var(--dark);
+  color: #fff;
+}
+
+td {
+  border-bottom: 1px solid var(--light);
+  padding: 1em;
+}
+
+td:first-child {
+  width: 30%;
+}
+
+td:last-child {
+  width: 30px;
+}
+
+
+
+/* GUEST / ADMIN LOGIN  */
 
 .box-login h3,
 .box-login h4  {
@@ -395,8 +451,9 @@ ul.results span {
   
 }
 
-.yelpy input[type=text] {
-  color: #997A1F;
+.yelpy input[type=text],
+input[name=search] {
+    color: #997A1F;
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
     font-style: italic;

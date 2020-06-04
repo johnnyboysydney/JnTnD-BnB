@@ -1,13 +1,13 @@
 <h2>Room Information</h2>
 {{#each rooms}}
-<div class="box-login">
+<div class="info">
   <h3>Current Room: #{{this.dataValues.id}}</h3>
   {{#unless this.dataValues.available}}
     {{#if this.dataValues.checkin}}
-      <h4><strong>Status:</strong> <span class="occupied">Occupied</span></h4>
-    {{/if}}
+      <h4><strong>Status:</strong> <span class="stock-occupied">Occupied</span></h4>
+    {{/if}} 
     {{#unless this.dataValues.checkin}}
-      <h4><strong>Status:</strong> <span class="reserved">Reserved</span></h4>
+      <h4><strong>Status:</strong> <span class="stock-reserved">Reserved</span></h4>
     {{/unless}}
     <ul>
       <li><strong>First Name:</strong> {{this.Guest.dataValues.first_name}}</li>
@@ -38,7 +38,7 @@
     {{/unless}}
   {{/unless}}
   {{#if this.dataValues.available}}
-    <h4><strong>Status:</strong> <span class="available">Available</span></h4>
+    <h4><strong>Status:</strong> <span class="stock-available">Vacant</span></h4>
     <form action="/admin/book/id/{{this.dataValues.id}}" method="GET">
     <label>
       <input type="submit" value="Book This Room">

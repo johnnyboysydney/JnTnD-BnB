@@ -7,7 +7,7 @@ const session = require("express-session");
 
 // Sets up the Express App
 const app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 80;
 
 // Models to sync
 const db = require("./models");
@@ -41,7 +41,7 @@ app.use(require("./controllers/api-weather"));
 require("./controllers/guest_room_controller")(app, passport, db);
 require("./controllers/guest_table_controller")(app, passport, db);
 require("./controllers/guest_login_controller")(app, passport, db);
-require("./controllers/admin_controller")(app, passport);
+require("./controllers/admin_controller")(app, passport, db);
 require("./config/passport/passport.js")(passport);
 
 app.use("/", (req, res) => {

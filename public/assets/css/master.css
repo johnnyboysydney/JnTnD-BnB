@@ -1,6 +1,9 @@
 @import url("css-reset.css");   
 @import url("design.css");
 @import url("nav.css");
+
+@import url("information.css");
+
 /* 
 @import url("app.css");
 @import url("assets/button.min.css");
