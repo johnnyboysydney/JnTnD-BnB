@@ -27,7 +27,7 @@
           {{/if}}
         {{/unless}}
       </td>
-      <td>{{this.dataValues.Guest.first_name}}</td>
+      <td>{{this.dataValues.Guest.dataValues.first_name}}, {{this.dataValues.Guest.dataValues.last_name}}</td>
       <td><a href="/admin/rooms/id/{{this.dataValues.id}}">View Room</a></td>
     </tr>
     {{/each}}
