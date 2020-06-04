@@ -6,20 +6,20 @@ module.exports = function(app, passport, db) {
 
   app.post("/guest/login", function(req, res, next) {
  
-      passport.authenticate("guestlogin", function(err, user, info) {
-        if (err) { return next(err) }
-        if (!user) {
-          // *** Display message without using flash option
-          // re-render the login form with a message
-          return res.render('guestbook', { isGuest: true, message: info.message })
-        }
-        req.logIn(user, function(err) {
-          if (err) { return next(err); }
-          return res.redirect('/guest');
-        });
-      })(req, res, next);
+    passport.authenticate("guestlogin", function(err, user, info) {
+      if (err) { return next(err) }
+      if (!user) {
+        // *** Display message without using flash option
+        // re-render the login form with a message
+        return res.render('guestbook', { isGuest: true, message: info.message })
+      }
+      req.logIn(user, function(err) {
+        if (err) { return next(err); }
+        return res.redirect('/guest');
+      });
+    })(req, res, next);
 
-    });
+  });
 
 
   app.get("/guest", isLoggedIn, (req, res) => {
