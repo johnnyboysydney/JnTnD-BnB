@@ -15,11 +15,32 @@ module.exports = function(app, passport) {
 
   // process the login form
   // app.post('/login', do all our passport stuff here);
+  /*
   app.post('/admin/login', passport.authenticate('admin-login', {
     successRedirect : '/admin/menu', 
     failureRedirect : '/admin/login' 
   })
-  );
+  );*/
+
+  app.post("/admin/login", function(req, res, next) {
+ 
+    passport.authenticate("admin-login", function(err, user, info) {
+      if (err) { return next(err) }
+      if (!user) {
+        // *** Display message without using flash option
+        // re-render the login form with a message
+        //return res.render('guestbook', { isGuest: true, message: info.message })
+        return res.render('loginadmin', { isAdmin: true, message: info.message });
+      }
+      req.logIn(user, function(err) {
+        if (err) { return next(err); }
+        return res.redirect('/admin/menu');
+      });
+    })(req, res, next);
+
+  });
+
+
   // SIGNUP 
   app.get('/admin/signup', function(req, res) {
     res.render('adminsignup', { isAdmin: true});

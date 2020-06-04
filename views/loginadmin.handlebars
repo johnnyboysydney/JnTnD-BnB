@@ -1,5 +1,8 @@
 <h2>Admin Login</h2>
 <form action="/admin/login" method="POST" class="box-login">
+  {{#if message}}
+  <div class="message-log">{{message}}</div>
+  {{/if}}
   <label>
     <span>Username</span>
     <input type="email" name="email" placeholder="Your Username (ie email)" required="required">

@@ -27,7 +27,7 @@ router.post("/api/yelp", (req, res) => {
     response => {
       const firstResult = response.jsonBody.businesses[0];
       const prettyJson = JSON.stringify(firstResult, null, 4);
-      console.log(prettyJson);
+      //console.log(prettyJson);
       const yelpResponse = response.jsonBody.businesses;
       var results = [];
       for (var i = 0; i < 3; i++) {
@@ -39,7 +39,7 @@ router.post("/api/yelp", (req, res) => {
           rating: yelpResponse[i].rating
         };
         results.push(displayData);
-        console.log("DISPLAY DATA: ", displayData);
+        //console.log("DISPLAY DATA: ", displayData);
       }
 
       // Render Yelp Results

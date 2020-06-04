@@ -311,13 +311,14 @@ form label:last-child {
 
 .room-available,
 .room-reserved,
-.room-occupied {
+.room-occupied,
+.message-log {
   color: #155724;
   background-color: #d4edda;
   
   border: 1px solid #c3e6cb;
   display: block;
-  margin: .5em;
+  margin: 1em;
   padding: 1em;
 }
 
@@ -327,7 +328,8 @@ form label:last-child {
   border-color: #b8daff;
 }
 
-.room-occupied {
+.room-occupied,
+.message-log {
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb;
@@ -519,13 +521,6 @@ body {
 
 
 */
-
-.message-log {
-  background: #ff88dd;
-  font-weight: bold;
-  padding: 1em;
-  width: 100%;
-}
 
 
 .nav ul, 
