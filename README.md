@@ -1,4 +1,7 @@
+<img src="https://github.com/johnnyboysydney/JnTnD-BnB/blob/master/public/assets/img/logo.png" width="150" height="100">
+
 # JnTnD-BnB 
+
 [contributors-shield]: https://img.shields.io/github/contributors/johnnyboysydney/JnTnD-BnB.svg?style=flat-square
 [contributors-url]: https://github.com/johnnyboysydney/JnTnD-BnB/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/johnnyboysydney/JnTnD-BnB.svg?style=flat-square
