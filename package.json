@@ -16,6 +16,7 @@
   "author": "John, Tushar, Danu",
   "license": "MIT",
   "dependencies": {
+    "ajv-keywords": "^3.4.1",
     "axios": "^0.19.2",
     "bcrypt": "^4.0.1",
     "bcrypt-nodejs": "0.0.3",
@@ -42,7 +43,7 @@
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.10.0",
     "eslint-plugin-prettier": "^2.7.0",
-    "mocha": "^5.2.0",
+    "mocha": "^7.2.0",
     "prettier": "^1.19.1"
   },
   "directories": {
