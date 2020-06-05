@@ -4,3 +4,4 @@ config.js
 **/.DS_Store
 config/config.json
 config/backup/config.json
+.env

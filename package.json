@@ -10,7 +10,7 @@
     "fix": "eslint --fix .",
     "watch": "nodemon server.js",
     "jest": "jest",
-    "dev": "nodemon -r dotenv/config server.js"    
+    "dev": "nodemon -r dotenv/config server.js"
   },
   "keywords": [],
   "author": "John, Tushar, Danu",
