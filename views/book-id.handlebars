@@ -1,15 +1,18 @@
-{{#each rooms}}
-    <h2>Booking Room Number #{{this.dataValues.id}}</h2>
+    <h2>Booking Room</h2>
+
+<form action="/admin/book/id/:id" method="POST">
+  {{#each rooms}}
+    <h3>Room #{{this.dataValues.id}}</h3>
     <input type="hidden" name="room" value="{{this.dataValues.id}}">
   {{/each}}
-<form action="/admin/book/id/:id" method="POST">
+
   <label>
     <span>First Name</span>
     <input type="text" name="firstname" placeholder="First Name"  required="required">
   </label>
   <label>
     <span>Last Name</span>
-    <input type="text" name="lastname" placeholder="First Name" required="required">
+    <input type="text" name="lastname" placeholder="Last Name" required="required">
   </label>
   <label>
     <span>Contact Number</span>
@@ -19,11 +22,11 @@
     <span>Email</span>
     <input type="text" name="email" placeholder="Email"  required="required"> 
   </label>
-  <label>
+  <label class="mobileView">
     <span>Check-in Date</span>
     <input type="date" name="checkin"  required="required">
   </label>
-  <label>
+  <label class="mobileView">
     <span>Check-out Date</span>
     <input type="date" name="checkout"  required="required">
   </label>

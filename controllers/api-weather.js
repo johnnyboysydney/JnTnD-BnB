@@ -10,7 +10,7 @@ var router = express.Router();
 // YELP FUSION API CALL
 router.get("/api/weather", (req, res) => {
 
-  var apiKey   = 'bc633d26ac557a539c8624291206c20c',
+  var apiKey   = process.env.OPEN_WEATHER_API_KEY;
     endPoint = 'https://api.openweathermap.org/data/2.5/weather?q=Sydney,Australia&units=metric&appid=' + apiKey;
 
 

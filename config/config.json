@@ -1,9 +1,13 @@
 {
   "development": {
+<<<<<<< HEAD
     "username": "root",
     "password": "root",
     "database": "hotel_db",
     "host": "127.0.0.1",
+=======
+    "use_env_variable": "DEV_DB",
+>>>>>>> 5d2589a8b81c9646b735b94e11c1fa741488b94e
     "dialect": "mysql"
   },
   "test": {

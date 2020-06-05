@@ -708,6 +708,16 @@ body {
     display: none;
   }
 
+
+
+  form label span {
+    display: none;
+  }
+
+  form label.mobileView span {
+    display: block;
+  }
+
 }
 
 
