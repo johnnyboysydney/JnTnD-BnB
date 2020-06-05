@@ -124,7 +124,7 @@ Yes, you can modify and refractor the code
 
 ## License
 
-[MIT License](./LICENSE)
+Default copyright laws apply. This project/repo/software and code is copyrighted and cannot be sold, altered or reused for any comercial use without the express permission of the owner of this project/repo/software and code.
 
 ### Authors
 

@@ -67,12 +67,18 @@ module.exports = function(app, passport, db) {
 
     db.Guest.findAll({
       where: {
-        first_name: {
-          [db.Op.like]: req.body.search + '%'
-        },
-        last_name: {
-          [db.Op.like]: req.body.search + '%'
-        } 
+        [db.Op.or]: [
+          {
+            first_name: {
+              [db.Op.like]: '%' + req.body.search + '%'
+            }
+          },
+          {
+            last_name: {
+              [db.Op.like]: '%' + req.body.search + '%'
+            }
+          }
+        ]
       }
     }).then(function(result) {
       res.render('guests', { guests: result, isAdmin: true});
@@ -224,6 +230,7 @@ module.exports = function(app, passport, db) {
     });
   });
 
+  /*
   app.post('/admin/tables-admin', isLoggedIn, function(req, res) {
     db.Table.findAll({
       where: {
@@ -235,7 +242,7 @@ module.exports = function(app, passport, db) {
       res.json(result);
     });
   });
-
+*/
   app.get('/admin/tables/id/:id', isLoggedIn, function(req, res) {
     db.Table.findAll({
       where: {

@@ -1,8 +1,8 @@
 // REQUIRED PACKAGES
-var express = require("express");
-var router = express.Router();
-var yelpKeys = require("../config.js");
-var yelp = require("yelp-fusion");
+const express = require("express");
+const router = express.Router();
+const yelpKeys = process.env.YELP_API_KEY;
+const yelp = require("yelp-fusion");
 
 // YELP FUSION API CALL
 router.get("/yelp", (req, res) => {
