@@ -1,4 +1,7 @@
+<img src="https://github.com/johnnyboysydney/JnTnD-BnB/blob/master/public/assets/img/logo.png" width="150" height="100">
+
 # JnTnD-BnB 
+
 [contributors-shield]: https://img.shields.io/github/contributors/johnnyboysydney/JnTnD-BnB.svg?style=flat-square
 [contributors-url]: https://github.com/johnnyboysydney/JnTnD-BnB/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/johnnyboysydney/JnTnD-BnB.svg?style=flat-square
@@ -12,11 +15,12 @@
 [license-shield]: https://img.shields.io/github/license/johnnyboysydney/JnTnD-BnB.svg?style=flat-square
 [license-url]: http://choosealicense.com/licenses/mit/
 [![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url] [![JS Standard][build-style-shield]][build-style-url] [![MIT License][license-shield]][license-url]
-[![Build Status](https://travis-ci.com/johnnyboysydney/Project-2.svg?token=h3vXPXspd1GX9AoW4AXc&branch=master)](https://travis-ci.com/johnnyboysydney/Project-2)
+[![Build Status](https://travis-ci.com/johnnyboysydney/JnTnD-BnB.svg?branch=master)](https://travis-ci.com/johnnyboysydney/JnTnD-BnB)
 
 
 ## Table of Content
 
+- [Link to the running application](#link-to-the-running-application)
 - [Description](#description)
 - [Development](#development)
 - [User Story](#user-story)
@@ -30,6 +34,10 @@
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 - [CopyRight](#copyright)
+
+## Link to the running application
+
+https://peaceful-plains-43046.herokuapp.com/
 
 ## Description
 
@@ -124,7 +132,7 @@ Yes, you can modify and refractor the code
 
 ## License
 
-Default copyright laws apply. This project/repo/software and code is copyrighted and cannot be sold, altered or reused for any comercial use without the express permission of the owner of this project/repo/software and code.
+[MIT License](./LICENSE)
 
 ### Authors
 
