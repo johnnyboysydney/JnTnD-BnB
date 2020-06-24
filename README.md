@@ -1,6 +1,6 @@
 <img src="https://github.com/johnnyboysydney/JnTnD-BnB/blob/master/public/assets/img/logo.png" width="150" height="100">
 
-# JnTnD-BnB 
+# JnTnD-BnB
 
 [contributors-shield]: https://img.shields.io/github/contributors/johnnyboysydney/JnTnD-BnB.svg?style=flat-square
 [contributors-url]: https://github.com/johnnyboysydney/JnTnD-BnB/graphs/contributors
@@ -16,7 +16,6 @@
 [license-url]: http://choosealicense.com/licenses/mit/
 [![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url] [![JS Standard][build-style-shield]][build-style-url] [![MIT License][license-shield]][license-url]
 [![Build Status](https://travis-ci.com/johnnyboysydney/JnTnD-BnB.svg?branch=master)](https://travis-ci.com/johnnyboysydney/JnTnD-BnB)
-
 
 ## Table of Content
 
@@ -55,7 +54,13 @@ Below some links of interest:
 
 ## User Story
 
-Section under construction
+It is an Online Hotel Booking system designed to assist the possible clients, reserve rooms and tables in the restaurant. Once at the hotel, you can check at any Kiosks and skip the queue and go directly to the concierge to pick up your room keys. You can also book a table at the Hotel restaurant while at the kiosk or at the concierge.
+
+The concierge will be able to check the guest in upon arrival and has identified themselves presenting a valid ID and means of payment. The concierge will also be able to check-out when the guest leaves, cancel any booking and table reservations.
+
+One the admin screen the front desk staff or concierge will be able to view a list of guests, a view of the rooms that are free, reserved and occupied. Selecting any of these rooms will show the status in a prompt view. If the room is empty, it will allow you to book it form this page, if reserved it will allow you to cancel the reservation, check-in the guest, and if the room is occupied they can check-out the guest.
+
+Also, the concierge has the ability to do a search using Welp-search if the guest has any questions on the whereabouts of a location or of the area and what to do's, the guest can also do a search at any kiosk in the hotel or on the website.
 
 ## Installation
 
@@ -73,11 +78,15 @@ To use this application locally:
 
 ### Schema
 
-Section under construction
+```SQL
+DROP DATABASE IF EXISTS hotel_db;
+CREATE DATABASE hotel_db;
+```
 
 ### Dependencies
 
 Production:
+
 - axios
 - bycrypt
 - bycrypt-node.js
@@ -96,6 +105,7 @@ Production:
 - yelp-fusion
 
 Development
+
 - chai
 - chai-http
 - cross-env
@@ -152,4 +162,4 @@ Copyright 2020 &copy; John Merchan, Tushar Kolwalkar & Danu Tucker-Saunders;
 
 :australia:
 
-[Table of Content](#Table-of-Content) --- [Back to Top](#Employee-Tracker) --- [Installation](#Installation)
+[Table of Content](#Table-of-Content) --- [Back to Top](#JnTnD-BnB ) --- [Installation](#Installation)
