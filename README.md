@@ -138,7 +138,6 @@ Yes, you can modify and refractor the code
 
 ## Demo
 
-![Demo](./public/assets/demo/demo.gif)
 
 ## License
 
